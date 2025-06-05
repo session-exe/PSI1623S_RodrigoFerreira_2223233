@@ -53,7 +53,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(478, 391);
+            label1.Location = new Point(474, 391);
             label1.Name = "label1";
             label1.Size = new Size(170, 19);
             label1.TabIndex = 4;
@@ -124,7 +124,7 @@
             guna2TextBox3.PlaceholderText = "";
             guna2TextBox3.SelectedText = "";
             guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2TextBox3.Size = new Size(240, 43);
+            guna2TextBox3.Size = new Size(240, 40);
             guna2TextBox3.TabIndex = 19;
             // 
             // label4
@@ -161,7 +161,7 @@
             guna2TextBox4.PlaceholderText = "";
             guna2TextBox4.SelectedText = "";
             guna2TextBox4.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2TextBox4.Size = new Size(240, 43);
+            guna2TextBox4.Size = new Size(240, 40);
             guna2TextBox4.TabIndex = 17;
             // 
             // guna2HtmlLabel3
