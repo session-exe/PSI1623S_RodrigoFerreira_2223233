@@ -6,6 +6,8 @@ GO
 USE OfiPecas;
 GO
 
+
+
 -- 2) Tabela UTILIZADOR 
 CREATE TABLE dbo.UTILIZADOR
 (
@@ -83,3 +85,9 @@ GO
 CREATE INDEX IX_ITEM_CARRINHO_CARRINHO ON dbo.ITEM_CARRINHO(id_carrinho);
 CREATE INDEX IX_PECA_CATEGORIA        ON dbo.PECA(id_categoria);
 GO
+
+
+select * from UTILIZADOR
+
+delete from UTILIZADOR
+

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using OfiPecas.Services;
+//using OfiPecas;
 
 namespace OfiPecas
 {
@@ -18,6 +18,7 @@ namespace OfiPecas
             InitializeComponent();
         }
 
+        // Butão para fazer login
         private void Button_Login_Click(object sender, EventArgs e)
         {
             string login = TextBox_User_Email.Text.Trim();
@@ -34,6 +35,22 @@ namespace OfiPecas
                 Main.Show();
                 this.Hide();
             }
+        }
+
+        // Criar conta
+        private void label_CriarConta_Click(object sender, EventArgs e)
+        {
+            CriarConta criarConta = new CriarConta();
+            criarConta.Show();
+            this.Hide();
+        }
+
+        // Recuperar senha
+        private void label_RecuperarPass_Click(object sender, EventArgs e)
+        {
+            Recuperar recuperar = new Recuperar();
+            recuperar.Show();
+            this.Hide();
         }
     }
 }

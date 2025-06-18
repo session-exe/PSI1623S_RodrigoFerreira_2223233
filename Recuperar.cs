@@ -16,5 +16,12 @@ namespace OfiPecas
         {
             InitializeComponent();
         }
+
+        private void Button_Back_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
     }
 }
