@@ -1,15 +1,26 @@
+using System;
+using System.Windows.Forms;
+using OfiPecas;
+using DotNetEnv;
+using System.Diagnostics;
+
 namespace OfiPecas
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            Env.Load();
+
+            // Verifica conexão antes de iniciar
+            if (!DatabaseConnection.TestarConexao())
+            {
+                MessageBox.Show("Erro ao conectar ao banco de dados!");
+                return;
+            }
+
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
         }

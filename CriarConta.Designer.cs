@@ -484,7 +484,6 @@
             Controls.Add(guna2Button1);
             Name = "CriarConta";
             Text = "CriarConta";
-            Load += CriarConta_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);

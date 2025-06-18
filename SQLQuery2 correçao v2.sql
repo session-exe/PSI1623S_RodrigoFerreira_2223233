@@ -6,10 +6,11 @@ GO
 USE OfiPecas;
 GO
 
--- 2) Tabela UTILIZADOR (antiga CLIENTE)
+-- 2) Tabela UTILIZADOR 
 CREATE TABLE dbo.UTILIZADOR
 (
     id_utilizador     INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_UTILIZADOR PRIMARY KEY,
+    username          NVARCHAR(50)      NOT NULL CONSTRAINT UQ_UTILIZADOR_USERNAME UNIQUE,
     email             NVARCHAR(150)     NOT NULL CONSTRAINT UQ_UTILIZADOR_EMAIL UNIQUE,
     senha             NVARCHAR(255)     NOT NULL,
     chave_recuperacao NVARCHAR(255)     NOT NULL,
@@ -35,7 +36,7 @@ CREATE TABLE dbo.PECA
     nome          NVARCHAR(150)     NOT NULL,
     preco         DECIMAL(18,2)     NOT NULL,
     estoque       INT               NOT NULL CONSTRAINT DF_PECA_ESTOQUE DEFAULT 0,
-    imagem        VARBINARY(MAX)    NULL,
+    imagem        VARBINARY(MAX)    NOT NULL,
     id_categoria  INT               NOT NULL
         CONSTRAINT FK_PECA_CATEGORIA FOREIGN KEY(id_categoria)
         REFERENCES dbo.CATEGORIA(id_categoria)

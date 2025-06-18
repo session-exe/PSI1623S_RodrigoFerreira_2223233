@@ -17,26 +17,6 @@ namespace OfiPecas
             InitializeComponent();
         }
 
-        private void CriarConta_Load(object sender, EventArgs e)
-        {
-
-            string conection = "";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+       
     }
 }
