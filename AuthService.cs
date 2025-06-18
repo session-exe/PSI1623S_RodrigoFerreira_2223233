@@ -143,7 +143,18 @@ namespace OfiPecas.Services
                 string storedHash = reader.GetString(1);
                 bool isAdmin = reader.GetBoolean(2);
 
-                if (!VerifyPassword(plainPassword, storedHash))
+                bool passwordValid;
+                try
+                {
+                    passwordValid = VerifyPassword(plainPassword, storedHash);
+                }
+                catch (FormatException)
+                {
+                    // a hash no banco não está em Base64 válido
+                    return (false, "Erro interno: dados de senha corrompidos.", 0, false);
+                }
+
+                if (!passwordValid)
                     return (false, "Senha incorreta.", 0, false);
 
                 return (true, "Login efetuado com sucesso.", userId, isAdmin);
