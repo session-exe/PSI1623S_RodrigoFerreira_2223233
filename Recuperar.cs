@@ -24,7 +24,7 @@ namespace OfiPecas
             string newPassword = TextBox_NovaPassword.Text;
             string repeatPassword = TextBox_RepetirPassword.Text;
 
-            // Validação local básica
+            // Validação local
             if (string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(key) ||
                 string.IsNullOrWhiteSpace(newPassword) ||
@@ -40,7 +40,7 @@ namespace OfiPecas
                 return;
             }
 
-            // Chama o serviço de recuperação
+            // Chama o metodo de recuperação
             var (success, message) = AuthService.RecoverPassword(username, key, newPassword);
 
             MessageBox.Show(message, success ? "Sucesso" : "Erro",

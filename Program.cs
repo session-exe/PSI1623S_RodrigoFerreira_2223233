@@ -32,7 +32,7 @@ namespace OfiPecas
                 ForceShutdown();
             }
 
-            // Verifica conexão com o banco
+            // Verifica conexão com o basde de dados
             if (!DatabaseConnection.TestarConexao())
             {
                 MessageBox.Show("Erro ao conectar ao banco de dados!");

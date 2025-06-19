@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace OfiPecas
 {
-    public partial class Items : UserControl
+    public partial class Categoria : UserControl
     {
-        public Items()
+        public Categoria()
         {
             InitializeComponent();
         }
-
-        
     }
 }

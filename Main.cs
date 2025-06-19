@@ -16,5 +16,30 @@ namespace OfiPecas
         {
             InitializeComponent();
         }
+
+        private void ImageButton_Pesquisa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImageButton_Admin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
