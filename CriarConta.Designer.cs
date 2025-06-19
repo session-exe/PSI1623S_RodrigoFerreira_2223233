@@ -116,6 +116,7 @@
             TextBox_ChaveRecuperacao.Margin = new Padding(3, 4, 3, 4);
             TextBox_ChaveRecuperacao.Name = "TextBox_ChaveRecuperacao";
             TextBox_ChaveRecuperacao.PlaceholderText = "";
+            TextBox_ChaveRecuperacao.ReadOnly = true;
             TextBox_ChaveRecuperacao.SelectedText = "";
             TextBox_ChaveRecuperacao.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBox_ChaveRecuperacao.Size = new Size(210, 30);
@@ -169,6 +170,7 @@
             TextBox_Password.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TextBox_Password.Size = new Size(210, 30);
             TextBox_Password.TabIndex = 13;
+            TextBox_Password.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -240,7 +242,7 @@
             label4.Name = "label4";
             label4.Size = new Size(210, 35);
             label4.TabIndex = 21;
-            label4.Text = "A chave de recuperação é utilizada em caso de perda da password.\r\n\r\n\r\n";
+            label4.Text = "A chave de recuperação é utilizada em caso de perda da password.\r\nGuarde a num sitio seguro.\r\n\r\n\r\n";
             // 
             // Button_Back
             // 
@@ -308,6 +310,7 @@
             TextBox_RepetirPassword.ShadowDecoration.CustomizableEdges = customizableEdges15;
             TextBox_RepetirPassword.Size = new Size(210, 30);
             TextBox_RepetirPassword.TabIndex = 24;
+            TextBox_RepetirPassword.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -354,9 +357,9 @@
             label7.Location = new Point(574, 201);
             label7.Name = "label7";
             label7.Padding = new Padding(1, 0, 1, 0);
-            label7.Size = new Size(59, 17);
+            label7.Size = new Size(117, 17);
             label7.TabIndex = 27;
-            label7.Text = "Telefone";
+            label7.Text = "Telefone(opcional)";
             // 
             // TextBox_Telefone
             // 

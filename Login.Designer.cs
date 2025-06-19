@@ -164,6 +164,7 @@
             TextBox_Pass.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TextBox_Pass.Size = new Size(210, 30);
             TextBox_Pass.TabIndex = 17;
+            TextBox_Pass.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel3
             // 

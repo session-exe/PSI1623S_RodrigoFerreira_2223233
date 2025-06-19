@@ -155,6 +155,54 @@ namespace OfiPecas
             }
         }
 
+        // Recupera password com a chave de recuperação
+        public static (bool success, string message) RecoverPassword(
+            string login,
+            string recoveryKey,
+            string newPassword)
+        {
+            if (string.IsNullOrWhiteSpace(login))
+                return (false, "O campo 'Utilizador' é obrigatório.");
+            if (string.IsNullOrWhiteSpace(recoveryKey))
+                return (false, "A 'Chave de recuperação' é obrigatória.");
+            if (string.IsNullOrWhiteSpace(newPassword))
+                return (false, "O campo 'Nova Password' é obrigatório.");
+
+            const string selectSql = @"
+                SELECT id_utilizador
+                FROM dbo.UTILIZADOR
+                WHERE (username = @Login OR email = @Login)
+                  AND chave_recuperacao = @Key;
+            ";
+            using var conn = DatabaseConnection.GetConnection();
+            using var selectCmd = new SqlCommand(selectSql, conn);
+            selectCmd.Parameters.AddWithValue("@Login", login);
+            selectCmd.Parameters.AddWithValue("@Key", recoveryKey);
+
+            var userIdObj = selectCmd.ExecuteScalar();
+            if (userIdObj == null)
+                return (false, "Dados de recuperação inválidos.");
+
+            int userId = Convert.ToInt32(userIdObj);
+            var senhaHash = HashPassword(newPassword);
+
+            const string updateSql = @"
+                UPDATE dbo.UTILIZADOR
+                SET senha = @Senha
+                WHERE id_utilizador = @UserId;
+            ";
+            using var updateCmd = new SqlCommand(updateSql, conn);
+            updateCmd.Parameters.AddWithValue("@Senha", senhaHash);
+            updateCmd.Parameters.AddWithValue("@UserId", userId);
+            int rows = updateCmd.ExecuteNonQuery();
+
+            return rows == 1
+                ? (true, "Senha alterada com sucesso.")
+                : (false, "Erro ao atualizar a senha.");
+        }
+
+
+
         // Valida formato de email
         private static bool IsValidEmail(string email)
         {
@@ -169,12 +217,14 @@ namespace OfiPecas
             }
         }
 
-        // Valida formato de telefone (apenas dígitos, entre 9 e 15 caracteres)
+
+        // Valida formato de telefone
         private static bool IsValidPhone(string phone)
         {
             var digitsOnly = Regex.Replace(phone, "\\D", "");
             return digitsOnly.Length >= 9 && digitsOnly.Length <= 15;
         }
+
 
         // Gera hash da senha com salt e 100k iterações
         private static string HashPassword(string plain)
@@ -189,6 +239,7 @@ namespace OfiPecas
             Array.Copy(hash, 0, result, 16, 32);
             return Convert.ToBase64String(result);
         }
+
 
         // Verifica se a senha corresponde ao hash armazenado
         public static bool VerifyPassword(string plain, string storedSaltHash)

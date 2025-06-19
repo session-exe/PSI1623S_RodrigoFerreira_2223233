@@ -17,9 +17,47 @@ namespace OfiPecas
             InitializeComponent();
         }
 
+        private void Button_Recuperar_Click(object sender, EventArgs e)
+        {
+            string username = TextBox_Utilizador.Text.Trim();
+            string key = TextBox_ChaveRecuperacao.Text.Trim();
+            string newPassword = TextBox_NovaPassword.Text;
+            string repeatPassword = TextBox_RepetirPassword.Text;
+
+            // Validação local básica
+            if (string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(key) ||
+                string.IsNullOrWhiteSpace(newPassword) ||
+                string.IsNullOrWhiteSpace(repeatPassword))
+            {
+                MessageBox.Show("Todos os campos são obrigatórios.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (newPassword != repeatPassword)
+            {
+                MessageBox.Show("As senhas não coincidem.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Chama o serviço de recuperação
+            var (success, message) = AuthService.RecoverPassword(username, key, newPassword);
+
+            MessageBox.Show(message, success ? "Sucesso" : "Erro",
+                MessageBoxButtons.OK,
+                success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+            if (success)
+            {
+                var login = new Login();
+                login.Show();
+                this.Close();
+            }
+        }
+
         private void Button_Back_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            var login = new Login();
             login.Show();
             this.Close();
         }
