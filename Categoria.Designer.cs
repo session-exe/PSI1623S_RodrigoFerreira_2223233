@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelCategoria = new Guna.UI2.WinForms.Guna2Panel();
             lblCategoria = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panelCategoria.SuspendLayout();
@@ -42,11 +42,11 @@
             panelCategoria.BorderRadius = 6;
             panelCategoria.BorderThickness = 2;
             panelCategoria.Controls.Add(lblCategoria);
-            panelCategoria.CustomizableEdges = customizableEdges3;
+            panelCategoria.CustomizableEdges = customizableEdges1;
             panelCategoria.Dock = DockStyle.Fill;
             panelCategoria.Location = new Point(0, 0);
             panelCategoria.Name = "panelCategoria";
-            panelCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelCategoria.ShadowDecoration.CustomizableEdges = customizableEdges2;
             panelCategoria.Size = new Size(130, 30);
             panelCategoria.TabIndex = 0;
             // 
@@ -56,9 +56,9 @@
             lblCategoria.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCategoria.Location = new Point(7, 5);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(112, 19);
+            lblCategoria.Size = new Size(62, 19);
             lblCategoria.TabIndex = 0;
-            lblCategoria.Text = "guna2HtmlLabel1";
+            lblCategoria.Text = "Categoria";
             // 
             // Categoria
             // 
