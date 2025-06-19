@@ -10,11 +10,24 @@ using System.Windows.Forms;
 
 namespace OfiPecas
 {
-    public partial class Produto : UserControl
+    public partial class ProdutoCard : UserControl
     {
-        public Produto()
+        public ProdutoCard()
         {
             InitializeComponent();
+
+
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
         }
     }
 }

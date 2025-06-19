@@ -29,9 +29,8 @@ namespace OfiPecas
 
             if (success)
             {
-                // Exemplo: abrir o formulário principal
-                //var Main = new Main(userId, isAdmin);
-                var Main = new Main();
+                // passa os dados do utilizador para a janela principal
+                var Main = new Main(userId, isAdmin);
                 Main.Show();
                 this.Hide();
             }

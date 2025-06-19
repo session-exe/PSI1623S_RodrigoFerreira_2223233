@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace OfiPecas
 {
     public partial class Main : Form
     {
-        public Main()
+        public Main(int userId, bool isAdmin)
         {
             InitializeComponent();
         }
@@ -22,22 +23,24 @@ namespace OfiPecas
 
         }
 
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void ImageButton_Admin_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        private void ImageButton_SidePanel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2ImageButton4_Click(object sender, EventArgs e)
+        private void ImageButton_Cart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImageButton_Settings_Click(object sender, EventArgs e)
         {
 
         }
