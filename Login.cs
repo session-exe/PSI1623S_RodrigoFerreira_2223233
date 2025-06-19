@@ -30,7 +30,7 @@ namespace OfiPecas
             if (success)
             {
                 // passa os dados do utilizador para a janela principal
-                var Main = new Main(userId, isAdmin);
+                var Main = new Loja(userId, isAdmin);
                 Main.Show();
                 this.Hide();
             }

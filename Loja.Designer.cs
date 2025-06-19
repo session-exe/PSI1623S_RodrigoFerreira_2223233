@@ -1,6 +1,6 @@
 ﻿namespace OfiPecas
 {
-    partial class Main
+    partial class Loja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Top_Panel = new Guna.UI2.WinForms.Guna2Panel();
             ImageButton_Pesquisa = new Guna.UI2.WinForms.Guna2ImageButton();
             TextBox_Pesquisa = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,10 +60,10 @@
             Top_Panel.Controls.Add(ImageButton_SidePanel);
             Top_Panel.CustomBorderColor = Color.DodgerBlue;
             Top_Panel.CustomBorderThickness = new Padding(0, 0, 0, 2);
-            Top_Panel.CustomizableEdges = customizableEdges17;
+            Top_Panel.CustomizableEdges = customizableEdges8;
             Top_Panel.Location = new Point(-3, 0);
             Top_Panel.Name = "Top_Panel";
-            Top_Panel.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            Top_Panel.ShadowDecoration.CustomizableEdges = customizableEdges9;
             Top_Panel.Size = new Size(1088, 55);
             Top_Panel.TabIndex = 0;
             // 
@@ -76,10 +76,10 @@
             ImageButton_Pesquisa.ImageOffset = new Point(0, 0);
             ImageButton_Pesquisa.ImageRotate = 0F;
             ImageButton_Pesquisa.ImageSize = new Size(20, 20);
-            ImageButton_Pesquisa.Location = new Point(728, 17);
+            ImageButton_Pesquisa.Location = new Point(786, 20);
             ImageButton_Pesquisa.Name = "ImageButton_Pesquisa";
             ImageButton_Pesquisa.PressedState.ImageSize = new Size(64, 64);
-            ImageButton_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            ImageButton_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges1;
             ImageButton_Pesquisa.Size = new Size(20, 20);
             ImageButton_Pesquisa.TabIndex = 24;
             ImageButton_Pesquisa.Click += ImageButton_Pesquisa_Click;
@@ -87,7 +87,7 @@
             // TextBox_Pesquisa
             // 
             TextBox_Pesquisa.BorderRadius = 6;
-            TextBox_Pesquisa.CustomizableEdges = customizableEdges11;
+            TextBox_Pesquisa.CustomizableEdges = customizableEdges2;
             TextBox_Pesquisa.DefaultText = "";
             TextBox_Pesquisa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TextBox_Pesquisa.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -96,11 +96,11 @@
             TextBox_Pesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_Pesquisa.Font = new Font("Segoe UI", 9F);
             TextBox_Pesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Pesquisa.Location = new Point(487, 12);
+            TextBox_Pesquisa.Location = new Point(545, 15);
             TextBox_Pesquisa.Name = "TextBox_Pesquisa";
             TextBox_Pesquisa.PlaceholderText = "";
             TextBox_Pesquisa.SelectedText = "";
-            TextBox_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            TextBox_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges3;
             TextBox_Pesquisa.Size = new Size(270, 30);
             TextBox_Pesquisa.TabIndex = 4;
             // 
@@ -115,7 +115,7 @@
             ImageButton_Settings.Location = new Point(1023, 10);
             ImageButton_Settings.Name = "ImageButton_Settings";
             ImageButton_Settings.PressedState.ImageSize = new Size(64, 64);
-            ImageButton_Settings.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            ImageButton_Settings.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ImageButton_Settings.Size = new Size(35, 35);
             ImageButton_Settings.TabIndex = 3;
             ImageButton_Settings.Click += ImageButton_Settings_Click;
@@ -131,7 +131,7 @@
             ImageButton_Cart.Location = new Point(971, 10);
             ImageButton_Cart.Name = "ImageButton_Cart";
             ImageButton_Cart.PressedState.ImageSize = new Size(64, 64);
-            ImageButton_Cart.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            ImageButton_Cart.ShadowDecoration.CustomizableEdges = customizableEdges5;
             ImageButton_Cart.Size = new Size(35, 35);
             ImageButton_Cart.TabIndex = 2;
             ImageButton_Cart.Click += ImageButton_Cart_Click;
@@ -147,7 +147,7 @@
             ImageButton_Admin.Location = new Point(919, 10);
             ImageButton_Admin.Name = "ImageButton_Admin";
             ImageButton_Admin.PressedState.ImageSize = new Size(64, 64);
-            ImageButton_Admin.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            ImageButton_Admin.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ImageButton_Admin.Size = new Size(35, 35);
             ImageButton_Admin.TabIndex = 1;
             ImageButton_Admin.Click += ImageButton_Admin_Click;
@@ -163,7 +163,7 @@
             ImageButton_SidePanel.Location = new Point(16, 10);
             ImageButton_SidePanel.Name = "ImageButton_SidePanel";
             ImageButton_SidePanel.PressedState.ImageSize = new Size(64, 64);
-            ImageButton_SidePanel.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            ImageButton_SidePanel.ShadowDecoration.CustomizableEdges = customizableEdges7;
             ImageButton_SidePanel.Size = new Size(35, 35);
             ImageButton_SidePanel.TabIndex = 0;
             ImageButton_SidePanel.Click += ImageButton_SidePanel_Click;
@@ -182,7 +182,7 @@
             flowLayoutPanel_Sidebar.Size = new Size(130, 505);
             flowLayoutPanel_Sidebar.TabIndex = 0;
             // 
-            // Main
+            // Loja
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -191,8 +191,8 @@
             Controls.Add(flowLayoutPanel_Sidebar);
             Controls.Add(flowLayoutPanel_Produtos);
             Controls.Add(Top_Panel);
-            Name = "Main";
-            Text = "Main";
+            Name = "Loja";
+            Text = "Loja";
             Top_Panel.ResumeLayout(false);
             ResumeLayout(false);
         }

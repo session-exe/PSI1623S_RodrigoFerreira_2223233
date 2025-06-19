@@ -36,6 +36,7 @@
             lblNome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPreco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnAdicionar = new Guna.UI2.WinForms.Guna2Button();
+            lblStock = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)picProduto).BeginInit();
             SuspendLayout();
             // 
@@ -57,15 +58,15 @@
             lblNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNome.Location = new Point(11, 181);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(121, 22);
+            lblNome.Size = new Size(60, 22);
             lblNome.TabIndex = 1;
-            lblNome.Text = "guna2HtmlLabel1";
+            lblNome.Text = "Nomeee";
             // 
             // lblPreco
             // 
             lblPreco.BackColor = Color.Transparent;
             lblPreco.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPreco.Location = new Point(165, 181);
+            lblPreco.Location = new Point(184, 181);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(35, 22);
             lblPreco.TabIndex = 2;
@@ -92,12 +93,23 @@
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.TextAlign = HorizontalAlignment.Left;
             // 
+            // lblStock
+            // 
+            lblStock.BackColor = Color.Transparent;
+            lblStock.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStock.Location = new Point(8, 223);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(27, 22);
+            lblStock.TabIndex = 5;
+            lblStock.Text = "000";
+            // 
             // ProdutoCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DodgerBlue;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(lblStock);
             Controls.Add(btnAdicionar);
             Controls.Add(lblPreco);
             Controls.Add(lblNome);
@@ -116,5 +128,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNome;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreco;
         private Guna.UI2.WinForms.Guna2Button btnAdicionar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblStock;
     }
 }

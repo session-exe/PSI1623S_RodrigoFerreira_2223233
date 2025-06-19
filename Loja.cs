@@ -11,9 +11,9 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 namespace OfiPecas
 {
-    public partial class Main : Form
+    public partial class Loja : Form
     {
-        public Main(int userId, bool isAdmin)
+        public Loja(int userId, bool isAdmin)
         {
             InitializeComponent();
         }
@@ -22,8 +22,6 @@ namespace OfiPecas
         {
 
         }
-
-
 
         private void ImageButton_Admin_Click(object sender, EventArgs e)
         {

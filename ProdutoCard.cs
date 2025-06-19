@@ -15,12 +15,13 @@ namespace OfiPecas
         private int _produtoId;
         private int _userId;
 
-        public ProdutoCard(int produtoId, string nome, decimal preco, Image imagem, int userId)
+        public ProdutoCard(int produtoId, string nome, decimal preco, int stock, Image imagem, int userId)
         {
             InitializeComponent();
             _produtoId = produtoId;
             _userId = userId;
 
+            lblStock.Text = stock > 0 ? $"Stock: {stock}" : "Esgotado";
             lblNome.Text = nome;
             lblPreco.Text = $"{preco:0.00} €";
             picProduto.Image = imagem;
