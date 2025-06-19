@@ -181,6 +181,7 @@
             flowLayoutPanel_Sidebar.Name = "flowLayoutPanel_Sidebar";
             flowLayoutPanel_Sidebar.Size = new Size(130, 505);
             flowLayoutPanel_Sidebar.TabIndex = 0;
+            flowLayoutPanel_Sidebar.Visible = false;
             // 
             // Loja
             // 
