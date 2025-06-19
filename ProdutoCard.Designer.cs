@@ -91,7 +91,6 @@
             btnAdicionar.TabIndex = 3;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.TextAlign = HorizontalAlignment.Left;
-            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // ProdutoCard
             // 

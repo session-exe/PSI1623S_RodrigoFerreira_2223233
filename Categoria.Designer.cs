@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelCategoria = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblCategoria = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panelCategoria.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,24 +41,24 @@
             panelCategoria.BorderColor = Color.FromArgb(224, 224, 224);
             panelCategoria.BorderRadius = 6;
             panelCategoria.BorderThickness = 2;
-            panelCategoria.Controls.Add(guna2HtmlLabel1);
-            panelCategoria.CustomizableEdges = customizableEdges1;
+            panelCategoria.Controls.Add(lblCategoria);
+            panelCategoria.CustomizableEdges = customizableEdges3;
             panelCategoria.Dock = DockStyle.Fill;
             panelCategoria.Location = new Point(0, 0);
             panelCategoria.Name = "panelCategoria";
-            panelCategoria.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            panelCategoria.ShadowDecoration.CustomizableEdges = customizableEdges4;
             panelCategoria.Size = new Size(130, 30);
             panelCategoria.TabIndex = 0;
             // 
-            // guna2HtmlLabel1
+            // lblCategoria
             // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(7, 5);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(112, 19);
-            guna2HtmlLabel1.TabIndex = 0;
-            guna2HtmlLabel1.Text = "guna2HtmlLabel1";
+            lblCategoria.BackColor = Color.Transparent;
+            lblCategoria.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategoria.Location = new Point(7, 5);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(112, 19);
+            lblCategoria.TabIndex = 0;
+            lblCategoria.Text = "guna2HtmlLabel1";
             // 
             // Categoria
             // 
@@ -76,6 +76,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel panelCategoria;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCategoria;
     }
 }

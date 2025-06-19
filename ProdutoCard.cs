@@ -12,22 +12,26 @@ namespace OfiPecas
 {
     public partial class ProdutoCard : UserControl
     {
-        public ProdutoCard()
+        private int _produtoId;
+        private int _userId;
+
+        public ProdutoCard(int produtoId, string nome, decimal preco, Image imagem, int userId)
         {
             InitializeComponent();
+            _produtoId = produtoId;
+            _userId = userId;
 
+            lblNome.Text = nome;
+            lblPreco.Text = $"{preco:0.00} €";
+            picProduto.Image = imagem;
 
+            btnAdicionar.Click += BtnAdicionar_Click;
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-
-
+            // TODO: Adicionar ao carrinho na BD
+            MessageBox.Show("Produto adicionado ao carrinho!", "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
