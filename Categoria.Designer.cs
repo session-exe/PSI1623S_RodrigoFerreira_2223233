@@ -37,13 +37,14 @@
             // 
             // panelCategoria
             // 
-            panelCategoria.BackColor = Color.DodgerBlue;
+            panelCategoria.BackColor = Color.Transparent;
             panelCategoria.BorderColor = Color.DodgerBlue;
-            panelCategoria.BorderRadius = 9;
+            panelCategoria.BorderRadius = 6;
             panelCategoria.BorderThickness = 2;
             panelCategoria.Controls.Add(lblCategoria);
             panelCategoria.CustomizableEdges = customizableEdges1;
             panelCategoria.Dock = DockStyle.Fill;
+            panelCategoria.FillColor = Color.DodgerBlue;
             panelCategoria.Location = new Point(0, 0);
             panelCategoria.Name = "panelCategoria";
             panelCategoria.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -53,10 +54,10 @@
             // lblCategoria
             // 
             lblCategoria.BackColor = Color.Transparent;
-            lblCategoria.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCategoria.Location = new Point(7, 5);
+            lblCategoria.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategoria.Location = new Point(7, 3);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(62, 19);
+            lblCategoria.Size = new Size(74, 23);
             lblCategoria.TabIndex = 0;
             lblCategoria.Text = "Categoria";
             // 

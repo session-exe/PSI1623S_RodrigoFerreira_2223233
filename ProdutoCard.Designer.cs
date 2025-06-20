@@ -58,18 +58,20 @@
             // 
             // lblNome
             // 
-            lblNome.BackColor = Color.Transparent;
-            lblNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNome.BackColor = Color.FromArgb(40, 40, 40);
+            lblNome.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNome.ForeColor = Color.White;
             lblNome.Location = new Point(11, 181);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(60, 22);
+            lblNome.Size = new Size(61, 22);
             lblNome.TabIndex = 1;
             lblNome.Text = "Nomeee";
             // 
             // lblPreco
             // 
-            lblPreco.BackColor = Color.Transparent;
-            lblPreco.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPreco.BackColor = Color.FromArgb(40, 40, 40);
+            lblPreco.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPreco.ForeColor = Color.White;
             lblPreco.Location = new Point(184, 181);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(35, 22);
@@ -78,6 +80,7 @@
             // 
             // btnAdicionar
             // 
+            btnAdicionar.BackColor = Color.FromArgb(40, 40, 40);
             btnAdicionar.BorderRadius = 6;
             btnAdicionar.CustomizableEdges = customizableEdges3;
             btnAdicionar.DisabledState.BorderColor = Color.DarkGray;
@@ -99,9 +102,10 @@
             // 
             // lblStock
             // 
-            lblStock.BackColor = Color.Transparent;
-            lblStock.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStock.Location = new Point(8, 223);
+            lblStock.BackColor = Color.FromArgb(40, 40, 40);
+            lblStock.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStock.ForeColor = Color.White;
+            lblStock.Location = new Point(12, 223);
             lblStock.Name = "lblStock";
             lblStock.Size = new Size(27, 22);
             lblStock.TabIndex = 5;
@@ -109,12 +113,15 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.BackColor = Color.Transparent;
             guna2Panel1.BorderColor = Color.DodgerBlue;
             guna2Panel1.BorderRadius = 12;
             guna2Panel1.BorderThickness = 2;
             guna2Panel1.Controls.Add(picProduto);
+            guna2Panel1.Controls.Add(lblStock);
             guna2Panel1.CustomizableEdges = customizableEdges5;
             guna2Panel1.Dock = DockStyle.Fill;
+            guna2Panel1.FillColor = Color.FromArgb(40, 40, 40);
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -126,9 +133,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
-            Controls.Add(lblStock);
-            Controls.Add(btnAdicionar);
             Controls.Add(lblPreco);
+            Controls.Add(btnAdicionar);
             Controls.Add(lblNome);
             Controls.Add(guna2Panel1);
             ForeColor = SystemColors.ControlText;
@@ -136,6 +142,7 @@
             Size = new Size(260, 260);
             ((System.ComponentModel.ISupportInitialize)picProduto).EndInit();
             guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
