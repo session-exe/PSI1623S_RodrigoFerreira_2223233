@@ -71,17 +71,17 @@
             // 
             ImageButton_Pesquisa.BackColor = Color.White;
             ImageButton_Pesquisa.CheckedState.ImageSize = new Size(64, 64);
-            ImageButton_Pesquisa.HoverState.ImageSize = new Size(64, 64);
-            ImageButton_Pesquisa.Image = Properties.Resources.icon_search1;
+            ImageButton_Pesquisa.HoverState.ImageSize = new Size(21, 21);
+            ImageButton_Pesquisa.Image = Properties.Resources.icon_search;
             ImageButton_Pesquisa.ImageOffset = new Point(0, 0);
             ImageButton_Pesquisa.ImageRotate = 0F;
-            ImageButton_Pesquisa.ImageSize = new Size(20, 20);
-            ImageButton_Pesquisa.Location = new Point(786, 20);
+            ImageButton_Pesquisa.ImageSize = new Size(21, 21);
+            ImageButton_Pesquisa.Location = new Point(785, 17);
             ImageButton_Pesquisa.Name = "ImageButton_Pesquisa";
-            ImageButton_Pesquisa.PressedState.ImageSize = new Size(64, 64);
+            ImageButton_Pesquisa.PressedState.ImageSize = new Size(21, 21);
             ImageButton_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            ImageButton_Pesquisa.Size = new Size(20, 20);
-            ImageButton_Pesquisa.TabIndex = 24;
+            ImageButton_Pesquisa.Size = new Size(23, 23);
+            ImageButton_Pesquisa.TabIndex = 25;
             ImageButton_Pesquisa.Click += ImageButton_Pesquisa_Click;
             // 
             // TextBox_Pesquisa
@@ -94,27 +94,28 @@
             TextBox_Pesquisa.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TextBox_Pesquisa.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TextBox_Pesquisa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Pesquisa.Font = new Font("Segoe UI", 9F);
+            TextBox_Pesquisa.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TextBox_Pesquisa.ForeColor = Color.Black;
             TextBox_Pesquisa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Pesquisa.Location = new Point(545, 15);
+            TextBox_Pesquisa.Location = new Point(537, 13);
             TextBox_Pesquisa.Name = "TextBox_Pesquisa";
-            TextBox_Pesquisa.PlaceholderText = "";
+            TextBox_Pesquisa.PlaceholderText = "Pesquisar..";
             TextBox_Pesquisa.SelectedText = "";
             TextBox_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            TextBox_Pesquisa.Size = new Size(270, 30);
+            TextBox_Pesquisa.Size = new Size(280, 32);
             TextBox_Pesquisa.TabIndex = 4;
             // 
             // ImageButton_Settings
             // 
             ImageButton_Settings.CheckedState.ImageSize = new Size(64, 64);
-            ImageButton_Settings.HoverState.ImageSize = new Size(64, 64);
+            ImageButton_Settings.HoverState.ImageSize = new Size(30, 30);
             ImageButton_Settings.Image = Properties.Resources.icon_settings;
             ImageButton_Settings.ImageOffset = new Point(0, 0);
             ImageButton_Settings.ImageRotate = 0F;
             ImageButton_Settings.ImageSize = new Size(30, 30);
             ImageButton_Settings.Location = new Point(1023, 10);
             ImageButton_Settings.Name = "ImageButton_Settings";
-            ImageButton_Settings.PressedState.ImageSize = new Size(64, 64);
+            ImageButton_Settings.PressedState.ImageSize = new Size(30, 30);
             ImageButton_Settings.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ImageButton_Settings.Size = new Size(35, 35);
             ImageButton_Settings.TabIndex = 3;
@@ -123,14 +124,14 @@
             // ImageButton_Cart
             // 
             ImageButton_Cart.CheckedState.ImageSize = new Size(64, 64);
-            ImageButton_Cart.HoverState.ImageSize = new Size(64, 64);
+            ImageButton_Cart.HoverState.ImageSize = new Size(30, 30);
             ImageButton_Cart.Image = Properties.Resources.icon_shopping_cart;
             ImageButton_Cart.ImageOffset = new Point(0, 0);
             ImageButton_Cart.ImageRotate = 0F;
             ImageButton_Cart.ImageSize = new Size(30, 30);
             ImageButton_Cart.Location = new Point(971, 10);
             ImageButton_Cart.Name = "ImageButton_Cart";
-            ImageButton_Cart.PressedState.ImageSize = new Size(64, 64);
+            ImageButton_Cart.PressedState.ImageSize = new Size(30, 30);
             ImageButton_Cart.ShadowDecoration.CustomizableEdges = customizableEdges5;
             ImageButton_Cart.Size = new Size(35, 35);
             ImageButton_Cart.TabIndex = 2;
@@ -139,14 +140,14 @@
             // ImageButton_Admin
             // 
             ImageButton_Admin.CheckedState.ImageSize = new Size(64, 64);
-            ImageButton_Admin.HoverState.ImageSize = new Size(64, 64);
+            ImageButton_Admin.HoverState.ImageSize = new Size(30, 30);
             ImageButton_Admin.Image = Properties.Resources.icon_admin;
             ImageButton_Admin.ImageOffset = new Point(0, 0);
             ImageButton_Admin.ImageRotate = 0F;
             ImageButton_Admin.ImageSize = new Size(30, 30);
             ImageButton_Admin.Location = new Point(919, 10);
             ImageButton_Admin.Name = "ImageButton_Admin";
-            ImageButton_Admin.PressedState.ImageSize = new Size(64, 64);
+            ImageButton_Admin.PressedState.ImageSize = new Size(30, 30);
             ImageButton_Admin.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ImageButton_Admin.Size = new Size(35, 35);
             ImageButton_Admin.TabIndex = 1;
@@ -155,14 +156,14 @@
             // ImageButton_SidePanel
             // 
             ImageButton_SidePanel.CheckedState.ImageSize = new Size(64, 64);
-            ImageButton_SidePanel.HoverState.ImageSize = new Size(64, 64);
+            ImageButton_SidePanel.HoverState.ImageSize = new Size(30, 30);
             ImageButton_SidePanel.Image = Properties.Resources.icon_menu_burger;
             ImageButton_SidePanel.ImageOffset = new Point(0, 0);
             ImageButton_SidePanel.ImageRotate = 0F;
             ImageButton_SidePanel.ImageSize = new Size(30, 30);
             ImageButton_SidePanel.Location = new Point(16, 10);
             ImageButton_SidePanel.Name = "ImageButton_SidePanel";
-            ImageButton_SidePanel.PressedState.ImageSize = new Size(64, 64);
+            ImageButton_SidePanel.PressedState.ImageSize = new Size(30, 30);
             ImageButton_SidePanel.ShadowDecoration.CustomizableEdges = customizableEdges7;
             ImageButton_SidePanel.Size = new Size(35, 35);
             ImageButton_SidePanel.TabIndex = 0;
@@ -170,6 +171,7 @@
             // 
             // flowLayoutPanel_Produtos
             // 
+            flowLayoutPanel_Produtos.AutoScroll = true;
             flowLayoutPanel_Produtos.Location = new Point(1, 55);
             flowLayoutPanel_Produtos.Name = "flowLayoutPanel_Produtos";
             flowLayoutPanel_Produtos.Size = new Size(1081, 504);
@@ -177,9 +179,11 @@
             // 
             // flowLayoutPanel_Sidebar
             // 
+            flowLayoutPanel_Sidebar.AutoScroll = true;
+            flowLayoutPanel_Sidebar.BackColor = Color.White;
             flowLayoutPanel_Sidebar.Location = new Point(1, 55);
             flowLayoutPanel_Sidebar.Name = "flowLayoutPanel_Sidebar";
-            flowLayoutPanel_Sidebar.Size = new Size(130, 505);
+            flowLayoutPanel_Sidebar.Size = new Size(137, 505);
             flowLayoutPanel_Sidebar.TabIndex = 0;
             flowLayoutPanel_Sidebar.Visible = false;
             // 

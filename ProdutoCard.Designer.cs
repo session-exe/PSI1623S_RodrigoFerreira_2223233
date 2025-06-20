@@ -32,12 +32,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picProduto = new Guna.UI2.WinForms.Guna2PictureBox();
             lblNome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPreco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnAdicionar = new Guna.UI2.WinForms.Guna2Button();
             lblStock = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)picProduto).BeginInit();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // picProduto
@@ -45,10 +49,10 @@
             picProduto.BorderRadius = 6;
             picProduto.CustomizableEdges = customizableEdges1;
             picProduto.ImageRotate = 0F;
-            picProduto.Location = new Point(8, 9);
+            picProduto.Location = new Point(12, 12);
             picProduto.Name = "picProduto";
             picProduto.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            picProduto.Size = new Size(246, 166);
+            picProduto.Size = new Size(236, 161);
             picProduto.TabIndex = 0;
             picProduto.TabStop = false;
             // 
@@ -103,21 +107,35 @@
             lblStock.TabIndex = 5;
             lblStock.Text = "000";
             // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BorderColor = Color.DodgerBlue;
+            guna2Panel1.BorderRadius = 12;
+            guna2Panel1.BorderThickness = 2;
+            guna2Panel1.Controls.Add(picProduto);
+            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.Dock = DockStyle.Fill;
+            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel1.Size = new Size(260, 260);
+            guna2Panel1.TabIndex = 6;
+            // 
             // ProdutoCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DodgerBlue;
-            BorderStyle = BorderStyle.FixedSingle;
+            BackColor = Color.Transparent;
             Controls.Add(lblStock);
             Controls.Add(btnAdicionar);
             Controls.Add(lblPreco);
             Controls.Add(lblNome);
-            Controls.Add(picProduto);
+            Controls.Add(guna2Panel1);
             ForeColor = SystemColors.ControlText;
             Name = "ProdutoCard";
-            Size = new Size(263, 258);
+            Size = new Size(260, 260);
             ((System.ComponentModel.ISupportInitialize)picProduto).EndInit();
+            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +147,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreco;
         private Guna.UI2.WinForms.Guna2Button btnAdicionar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStock;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

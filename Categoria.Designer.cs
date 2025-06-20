@@ -38,8 +38,8 @@
             // panelCategoria
             // 
             panelCategoria.BackColor = Color.DodgerBlue;
-            panelCategoria.BorderColor = Color.FromArgb(224, 224, 224);
-            panelCategoria.BorderRadius = 6;
+            panelCategoria.BorderColor = Color.DodgerBlue;
+            panelCategoria.BorderRadius = 9;
             panelCategoria.BorderThickness = 2;
             panelCategoria.Controls.Add(lblCategoria);
             panelCategoria.CustomizableEdges = customizableEdges1;

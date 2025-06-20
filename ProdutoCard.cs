@@ -12,27 +12,44 @@ namespace OfiPecas
 {
     public partial class ProdutoCard : UserControl
     {
-        private int _produtoId;
+        // SOLUÇÃO: Propriedade pública para o ID da Peça.
+        // A Loja precisa disto para saber qual produto adicionar ao carrinho.
+        public int PecaId { get; private set; }
         private int _userId;
+
+        // SOLUÇÃO: Evento público.
+        // O card usa isto para "avisar" a Loja que o botão foi clicado.
+        public event EventHandler AdicionarAoCarrinhoClicked;
 
         public ProdutoCard(int produtoId, string nome, decimal preco, int stock, Image imagem, int userId)
         {
             InitializeComponent();
-            _produtoId = produtoId;
+
+            this.PecaId = produtoId; // Atribui o ID à propriedade pública
             _userId = userId;
 
-            lblStock.Text = stock > 0 ? $"Stock: {stock}" : "Esgotado";
-            lblNome.Text = nome;
-            lblPreco.Text = $"{preco:0.00} €";
-            picProduto.Image = imagem;
+            // Desativa o botão se o produto estiver esgotado
+            if (stock > 0)
+            {
+                lblStock.Text = $"Stock: {stock}";
+                btnAdicionar.Enabled = true;
+            }
+            else
+            {
+                lblStock.Text = "Esgotado";
+                btnAdicionar.Enabled = false;
+            }
 
-            btnAdicionar.Click += BtnAdicionar_Click;
+            lblNome.Text = nome;
+            lblPreco.Text = $"{preco:C}"; // Formatação para moeda (ex: 65,50 €)
+            picProduto.Image = imagem;
+            picProduto.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
-        private void BtnAdicionar_Click(object sender, EventArgs e)
+        private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            // TODO: Adicionar ao carrinho na BD
-            MessageBox.Show("Produto adicionado ao carrinho!", "Carrinho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // SOLUÇÃO: Em vez de mostrar uma MessageBox, disparamos o evento.
+            AdicionarAoCarrinhoClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -11,7 +11,6 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 namespace OfiPecas
 {
-    // A classe agora chama-se Loja, como corrigiste.
     public partial class Loja : Form
     {
         // Campos para guardar a informação do utilizador que fez login
@@ -24,28 +23,24 @@ namespace OfiPecas
             _userId = userId;
             _isAdmin = isAdmin;
 
-            // Esconde o botão de admin se o utilizador não for administrador (usa o ID correto do botão)
+            // Esconde o botão de admin se o utilizador não for administrador
             // ImageButton_Admin.Visible = _isAdmin;
 
-            // Associar o evento Load do formulário a um método nosso
+            // Associa o evento Load do formulário ao nosso método de inicialização
             this.Load += Loja_Load;
         }
 
-        /// <summary>
-        /// Este método é chamado assim que o formulário é carregado.
-        /// </summary>
         private void Loja_Load(object sender, EventArgs e)
         {
-            // Carrega todos os produtos por defeito quando a loja abre
-            CarregarPecas();
+            CarregarPecas();      // Carrega todos os produtos por defeito
+            CarregarCategorias(); // Carrega as categorias na barra lateral
         }
 
-        /// <summary>
-        /// Método central para carregar e exibir as peças no FlowLayoutPanel.
-        /// </summary>
+        #region Carregamento de Controlos Dinâmicos
+
         private void CarregarPecas(List<Peca> pecas = null)
         {
-            // Limpa os controlos antigos antes de adicionar novos (usa o ID correto do painel)
+            // Limpa os controlos antigos antes de adicionar novos
             flowLayoutPanel_Produtos.Controls.Clear();
 
             // Se não for passada uma lista de peças, vai buscar todas à base de dados
@@ -54,14 +49,17 @@ namespace OfiPecas
                 pecas = StoreService.GetPecas();
             }
 
+            // Se, mesmo assim, a lista estiver vazia (nenhum produto encontrado), mostra uma mensagem.
             if (pecas.Count == 0)
             {
-                // Opcional: Mostrar uma mensagem se nenhuma peça for encontrada
-                Label lblEmpty = new Label();
-                lblEmpty.Text = "Nenhuma peça encontrada.";
-                lblEmpty.AutoSize = true;
-                lblEmpty.Font = new System.Drawing.Font("Segoe UI", 12F);
-                lblEmpty.ForeColor = System.Drawing.Color.White;
+                Label lblEmpty = new Label
+                {
+                    Text = "Nenhuma peça encontrada.",
+                    AutoSize = true,
+                    Font = new System.Drawing.Font("Segoe UI", 12F),
+                    ForeColor = System.Drawing.Color.Gray,
+                    Margin = new Padding(10)
+                };
                 flowLayoutPanel_Produtos.Controls.Add(lblEmpty);
                 return;
             }
@@ -69,57 +67,112 @@ namespace OfiPecas
             // Itera por cada peça na lista
             foreach (var peca in pecas)
             {
-                // Cria um novo ProdutoCard com os dados da peça
                 var card = new ProdutoCard(
                     peca.Id,
                     peca.Nome,
                     peca.Preco,
                     peca.Estoque,
-                    peca.GetImagem(), // Converte os bytes da imagem para um objeto Image
+                    peca.GetImagem(),
                     _userId
                 );
 
-                // Adiciona o card ao painel (usa o ID correto do painel)
+                // Subscreve ao evento do card. Quando for disparado, chama o método correspondente.
+                card.AdicionarAoCarrinhoClicked += Card_AdicionarAoCarrinhoClicked;
+
+                // Adiciona o card ao painel
                 flowLayoutPanel_Produtos.Controls.Add(card);
             }
         }
 
-        /// <summary>
-        /// Evento de clique do botão de pesquisa.
-        /// </summary>
+        private void CarregarCategorias()
+        {
+            flowLayoutPanel_Sidebar.Controls.Clear();
+
+            // Adiciona uma opção para "Todas as Peças" para limpar o filtro
+            var todas = new Categoria(0, "Todas as Peças"); // ID 0 é um caso especial
+            todas.CategoriaClicked += Categoria_Clicked;
+            flowLayoutPanel_Sidebar.Controls.Add(todas);
+
+            // Busca as categorias reais da base de dados
+            var categorias = StoreService.GetCategorias();
+
+            foreach (var cat in categorias)
+            {
+                var categoriaControl = new Categoria(cat.Id, cat.Nome);
+                categoriaControl.CategoriaClicked += Categoria_Clicked;
+                flowLayoutPanel_Sidebar.Controls.Add(categoriaControl);
+            }
+        }
+
+        #endregion
+
+        #region Handlers de Eventos dos Controlos Dinâmicos
+
+        private void Categoria_Clicked(object sender, EventArgs e)
+        {
+            if (sender is Categoria categoriaControl)
+            {
+                // Se a categoria clicada for "Todas as Peças" (nosso caso especial ID 0)
+                if (categoriaControl.CategoriaId == 0)
+                {
+                    CarregarPecas(); // Carrega todas as peças sem filtro
+                }
+                else
+                {
+                    // Caso contrário, busca as peças para a categoria específica
+                    var pecasFiltradas = StoreService.GetPecasPorCategoria(categoriaControl.CategoriaId);
+                    CarregarPecas(pecasFiltradas);
+                }
+            }
+        }
+
+        private void Card_AdicionarAoCarrinhoClicked(object sender, EventArgs e)
+        {
+            if (sender is ProdutoCard card)
+            {
+                // Chamamos o método do serviço para adicionar ao carrinho
+                var (success, message) = StoreService.AdicionarAoCarrinho(_userId, card.PecaId);
+
+                // Mostramos o resultado ao utilizador.
+                MessageBox.Show(message, success ? "Sucesso" : "Erro", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
+        #region Handlers de Eventos dos Botões do Formulário
+
         private void ImageButton_Pesquisa_Click(object sender, EventArgs e)
         {
-            // Usa o ID correto da caixa de texto
             string termoPesquisa = TextBox_Pesquisa.Text.Trim();
-
-            // Chama o método de pesquisa do nosso serviço
             var pecasEncontradas = StoreService.PesquisarPecas(termoPesquisa);
-
-            // Recarrega o painel de produtos com os resultados da pesquisa
             CarregarPecas(pecasEncontradas);
         }
 
-        // --- Funções dos outros botões (a implementar) ---
+        private void ImageButton_SidePanel_Click(object sender, EventArgs e)
+        {
+            // Lógica simples para mostrar/esconder a barra de categorias
+            flowLayoutPanel_Sidebar.Visible = !flowLayoutPanel_Sidebar.Visible;
+        }
+
+        // --- Outros botões (a implementar no futuro) ---
 
         private void ImageButton_Admin_Click(object sender, EventArgs e)
         {
             // TODO: Abrir o painel de administração
         }
 
-        private void ImageButton_SidePanel_Click(object sender, EventArgs e)
-        {
-            // Lógica para mostrar/esconder a barra de categorias (usa o ID correto do painel)
-            flowLayoutPanel_Sidebar.Visible = !flowLayoutPanel_Sidebar.Visible;
-        }
-
         private void ImageButton_Cart_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir o formulário/painel do carrinho
+            // TODO: Abrir o formulário/painel do carrinho de compras
         }
 
         private void ImageButton_Settings_Click(object sender, EventArgs e)
         {
             // TODO: Abrir as definições do utilizador
         }
+
+        #endregion
+
     }
 }

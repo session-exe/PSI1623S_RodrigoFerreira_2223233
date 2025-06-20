@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms; 
+using Microsoft.Data.SqlClient;
 
 // StoreService.cs
 using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms; // Adicionado para o MessageBox
+using System.Windows.Forms;
 
 namespace OfiPecas
 {
-    // Uma classe simples para transportar os dados da peça da BD para a UI
+    // Classe para transportar dados da Peça
     public class Peca
     {
         public int Id { get; set; }
@@ -23,12 +29,11 @@ namespace OfiPecas
         public int Estoque { get; set; }
         public byte[] ImagemBytes { get; set; }
 
-        // Converte o array de bytes para um objeto Image que pode ser usado na PictureBox
         public Image GetImagem()
         {
             if (ImagemBytes == null || ImagemBytes.Length == 0)
             {
-                return null; // ou retorna uma imagem placeholder
+                return null;
             }
             using (var ms = new MemoryStream(ImagemBytes))
             {
@@ -37,28 +42,25 @@ namespace OfiPecas
         }
     }
 
+    // Classe para transportar dados da Categoria
+    public class CategoriaInfo
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+    }
+
     public static class StoreService
     {
-        /// <summary>
-        /// Vai buscar todas as peças à base de dados.
-        /// </summary>
         public static List<Peca> GetPecas()
         {
-            // Usa a string de pesquisa nula para indicar que queremos todos os produtos
             return PesquisarPecas(null);
         }
 
-        /// <summary>
-        /// Pesquisa peças por um termo no nome ou retorna todas se o termo for nulo/vazio.
-        /// </summary>
         public static List<Peca> PesquisarPecas(string searchTerm)
         {
             var pecas = new List<Peca>();
-
-            // A query base seleciona todas as peças
             string sql = "SELECT id_peca, nome, preco, estoque, imagem FROM dbo.PECA";
 
-            // Se existir um termo de pesquisa, adiciona a cláusula WHERE
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {
                 sql += " WHERE nome LIKE @SearchTerm";
@@ -69,10 +71,8 @@ namespace OfiPecas
                 using var conn = DatabaseConnection.GetConnection();
                 using var cmd = new SqlCommand(sql, conn);
 
-                // Adiciona o parâmetro de pesquisa, se necessário
                 if (!string.IsNullOrWhiteSpace(searchTerm))
                 {
-                    // Os '%' são wildcards que permitem encontrar o termo em qualquer parte do nome
                     cmd.Parameters.AddWithValue("@SearchTerm", $"%{searchTerm}%");
                 }
 
@@ -85,22 +85,157 @@ namespace OfiPecas
                         Nome = reader.GetString("nome"),
                         Preco = reader.GetDecimal("preco"),
                         Estoque = reader.GetInt32("estoque"),
-                        // O campo da imagem é lido como um array de bytes (byte[])
                         ImagemBytes = (byte[])reader["imagem"]
                     };
                     pecas.Add(peca);
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                // Em caso de erro, mostra uma mensagem. Idealmente, poderias ter um sistema de logs.
                 MessageBox.Show($"Erro ao aceder às peças: {ex.Message}", "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return pecas;
         }
 
-        // TODO: Implementar o método para buscar por categoria quando necessário.
-        // public static List<Peca> GetPecasPorCategoria(int idCategoria) { ... }
+        public static List<Peca> GetPecasPorCategoria(int idCategoria)
+        {
+            var pecas = new List<Peca>();
+            string sql = "SELECT id_peca, nome, preco, estoque, imagem FROM dbo.PECA WHERE id_categoria = @CategoriaId";
+
+            try
+            {
+                using var conn = DatabaseConnection.GetConnection();
+                using var cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@CategoriaId", idCategoria);
+
+                using var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var peca = new Peca
+                    {
+                        Id = reader.GetInt32("id_peca"),
+                        Nome = reader.GetString("nome"),
+                        Preco = reader.GetDecimal("preco"),
+                        Estoque = reader.GetInt32("estoque"),
+                        ImagemBytes = (byte[])reader["imagem"]
+                    };
+                    pecas.Add(peca);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao aceder às peças: {ex.Message}", "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return pecas;
+        }
+
+        public static List<CategoriaInfo> GetCategorias()
+        {
+            var categorias = new List<CategoriaInfo>();
+            string sql = "SELECT id_categoria, nome FROM dbo.CATEGORIA ORDER BY nome";
+
+            try
+            {
+                using var conn = DatabaseConnection.GetConnection();
+                using var cmd = new SqlCommand(sql, conn);
+                using var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    var categoria = new CategoriaInfo
+                    {
+                        Id = reader.GetInt32("id_categoria"),
+                        Nome = reader.GetString("nome")
+                    };
+                    categorias.Add(categoria);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao buscar categorias: {ex.Message}", "Erro de Base de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return categorias;
+        }
+
+        public static (bool success, string message) AdicionarAoCarrinho(int userId, int pecaId)
+        {
+            using var conn = DatabaseConnection.GetConnection();
+            using var transaction = conn.BeginTransaction();
+
+            try
+            {
+                // Passo 1: Obter o ID do carrinho do utilizador (ou criar um novo)
+                int carrinhoId;
+                string sqlGetCart = "SELECT id_carrinho FROM dbo.CARRINHO WHERE id_utilizador = @UserId";
+                using (var cmdGetCart = new SqlCommand(sqlGetCart, conn, transaction))
+                {
+                    cmdGetCart.Parameters.AddWithValue("@UserId", userId);
+                    var result = cmdGetCart.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        carrinhoId = (int)result;
+                    }
+                    else
+                    {
+                        string sqlCreateCart = "INSERT INTO dbo.CARRINHO (id_utilizador) VALUES (@UserId); SELECT SCOPE_IDENTITY();";
+                        using (var cmdCreateCart = new SqlCommand(sqlCreateCart, conn, transaction))
+                        {
+                            cmdCreateCart.Parameters.AddWithValue("@UserId", userId);
+                            carrinhoId = Convert.ToInt32(cmdCreateCart.ExecuteScalar());
+                        }
+                    }
+                }
+
+                // Passo 2: Verificar se o item já existe no carrinho
+                int? itemId = null;
+                int quantidadeAtual = 0;
+                string sqlCheckItem = "SELECT id_item, quantidade FROM dbo.ITEM_CARRINHO WHERE id_carrinho = @CarrinhoId AND id_peca = @PecaId";
+                using (var cmdCheckItem = new SqlCommand(sqlCheckItem, conn, transaction))
+                {
+                    cmdCheckItem.Parameters.AddWithValue("@CarrinhoId", carrinhoId);
+                    cmdCheckItem.Parameters.AddWithValue("@PecaId", pecaId);
+                    using (var reader = cmdCheckItem.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            itemId = reader.GetInt32("id_item");
+                            quantidadeAtual = reader.GetInt32("quantidade");
+                        }
+                    }
+                }
+
+                // Passo 3: Inserir novo item ou atualizar a quantidade do existente
+                if (itemId.HasValue)
+                {
+                    string sqlUpdate = "UPDATE dbo.ITEM_CARRINHO SET quantidade = @NovaQuantidade WHERE id_item = @ItemId";
+                    using (var cmdUpdate = new SqlCommand(sqlUpdate, conn, transaction))
+                    {
+                        cmdUpdate.Parameters.AddWithValue("@NovaQuantidade", quantidadeAtual + 1);
+                        cmdUpdate.Parameters.AddWithValue("@ItemId", itemId.Value);
+                        cmdUpdate.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string sqlInsert = "INSERT INTO dbo.ITEM_CARRINHO (id_carrinho, id_peca, quantidade) VALUES (@CarrinhoId, @PecaId, 1)";
+                    using (var cmdInsert = new SqlCommand(sqlInsert, conn, transaction))
+                    {
+                        cmdInsert.Parameters.AddWithValue("@CarrinhoId", carrinhoId);
+                        cmdInsert.Parameters.AddWithValue("@PecaId", pecaId);
+                        cmdInsert.ExecuteNonQuery();
+                    }
+                }
+
+                transaction.Commit();
+                return (true, "Produto adicionado ao carrinho com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                return (false, $"Erro ao adicionar ao carrinho: {ex.Message}");
+            }
+        }
     }
 }
