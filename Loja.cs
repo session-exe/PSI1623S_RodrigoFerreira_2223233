@@ -24,7 +24,7 @@ namespace OfiPecas
             _isAdmin = isAdmin;
 
             // Esconde o botão de admin se o utilizador não for administrador
-            // ImageButton_Admin.Visible = _isAdmin;
+            //ImageButton_Admin.Visible = _isAdmin;
 
             // Associa o evento Load do formulário ao nosso método de inicialização
             this.Load += Loja_Load;
