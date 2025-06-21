@@ -9,14 +9,6 @@ using System.IO;
 using System.Windows.Forms; 
 using Microsoft.Data.SqlClient;
 
-// StoreService.cs
-using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
 
 namespace OfiPecas
 {
