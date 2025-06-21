@@ -78,15 +78,12 @@ namespace OfiPecas
             int totalProdutos = 0;
             decimal valorTotal = 0;
 
-            // Itera por todos os controlos de item no painel
+            // A iteração agora é muito mais limpa e segura
             foreach (ItemCarrinho itemControl in flowPanel_Produtos.Controls.OfType<ItemCarrinho>())
             {
-                // Acede aos controlos internos para obter a informação
-                int quantidade = (int)itemControl.Controls.Find("NumUpDwn_Quantidade", true).FirstOrDefault().GetType().GetProperty("Value").GetValue(itemControl.Controls.Find("NumUpDwn_Quantidade", true).FirstOrDefault());
-
-                // Extrai o preço do texto da label (ex: "12,00 €")
-                string precoTexto = itemControl.Controls.Find("lblPreco", true).FirstOrDefault().Text;
-                decimal preco = decimal.Parse(precoTexto.Replace("€", "").Trim());
+                // Acedemos diretamente às propriedades públicas do UserControl
+                int quantidade = itemControl.Quantidade;
+                decimal preco = itemControl.PrecoUnitario;
 
                 totalProdutos += quantidade;
                 valorTotal += preco * quantidade;

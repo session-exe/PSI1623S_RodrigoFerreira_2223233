@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowPanel_Produtos = new FlowLayoutPanel();
             Panel_Comprar = new Guna.UI2.WinForms.Guna2Panel();
             lbl_Total = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbl_Total_Produtos = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Button_Comprar = new Guna.UI2.WinForms.Guna2Button();
+            ImageButton_Back = new Guna.UI2.WinForms.Guna2ImageButton();
             Panel_Comprar.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,11 +56,11 @@
             Panel_Comprar.Controls.Add(lbl_Total);
             Panel_Comprar.Controls.Add(lbl_Total_Produtos);
             Panel_Comprar.Controls.Add(Button_Comprar);
-            Panel_Comprar.CustomizableEdges = customizableEdges7;
+            Panel_Comprar.CustomizableEdges = customizableEdges3;
             Panel_Comprar.FillColor = Color.FromArgb(45, 45, 45);
             Panel_Comprar.Location = new Point(707, 49);
             Panel_Comprar.Name = "Panel_Comprar";
-            Panel_Comprar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Panel_Comprar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Panel_Comprar.Size = new Size(339, 276);
             Panel_Comprar.TabIndex = 1;
             // 
@@ -88,7 +90,7 @@
             // 
             Button_Comprar.BackColor = Color.Transparent;
             Button_Comprar.BorderRadius = 10;
-            Button_Comprar.CustomizableEdges = customizableEdges5;
+            Button_Comprar.CustomizableEdges = customizableEdges1;
             Button_Comprar.DisabledState.BorderColor = Color.DarkGray;
             Button_Comprar.DisabledState.CustomBorderColor = Color.DarkGray;
             Button_Comprar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -98,10 +100,25 @@
             Button_Comprar.ForeColor = Color.White;
             Button_Comprar.Location = new Point(77, 204);
             Button_Comprar.Name = "Button_Comprar";
-            Button_Comprar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Button_Comprar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Button_Comprar.Size = new Size(180, 45);
             Button_Comprar.TabIndex = 0;
             Button_Comprar.Text = "Comprar";
+            // 
+            // ImageButton_Back
+            // 
+            ImageButton_Back.CheckedState.ImageSize = new Size(64, 64);
+            ImageButton_Back.HoverState.ImageSize = new Size(33, 33);
+            ImageButton_Back.Image = Properties.Resources.angle_left;
+            ImageButton_Back.ImageOffset = new Point(0, 0);
+            ImageButton_Back.ImageRotate = 0F;
+            ImageButton_Back.ImageSize = new Size(35, 35);
+            ImageButton_Back.Location = new Point(12, 12);
+            ImageButton_Back.Name = "ImageButton_Back";
+            ImageButton_Back.PressedState.ImageSize = new Size(33, 33);
+            ImageButton_Back.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            ImageButton_Back.Size = new Size(40, 40);
+            ImageButton_Back.TabIndex = 2;
             // 
             // Carrinho
             // 
@@ -109,6 +126,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(1084, 561);
+            Controls.Add(ImageButton_Back);
             Controls.Add(Panel_Comprar);
             Controls.Add(flowPanel_Produtos);
             Name = "Carrinho";
@@ -125,5 +143,6 @@
         private Guna.UI2.WinForms.Guna2Button Button_Comprar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Total_Produtos;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Total;
+        private Guna.UI2.WinForms.Guna2ImageButton ImageButton_Back;
     }
 }
