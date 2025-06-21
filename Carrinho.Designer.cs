@@ -104,6 +104,7 @@
             Button_Comprar.Size = new Size(180, 45);
             Button_Comprar.TabIndex = 0;
             Button_Comprar.Text = "Comprar";
+            Button_Comprar.Click += Button_Comprar_Click;
             // 
             // ImageButton_Back
             // 
@@ -119,6 +120,7 @@
             ImageButton_Back.ShadowDecoration.CustomizableEdges = customizableEdges5;
             ImageButton_Back.Size = new Size(40, 40);
             ImageButton_Back.TabIndex = 2;
+            ImageButton_Back.Click += ImageButton_Back_Click;
             // 
             // Carrinho
             // 

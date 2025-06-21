@@ -137,5 +137,10 @@ namespace OfiPecas
                 this.Close();
             }
         }
+
+        private void ImageButton_Back_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
     }
 }
