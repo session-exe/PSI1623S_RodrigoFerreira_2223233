@@ -127,13 +127,17 @@ namespace OfiPecas
 
         private void Button_Comprar_Click(object sender, EventArgs e)
         {
-            var (success, message) = StoreService.FinalizarEncomenda(_userId);
+            // Cria uma nova instância do formulário de pagamento
+            var formPagamento = new Pagamento(_userId);
 
-            MessageBox.Show(message, success ? "Sucesso" : "Erro", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+            // Mostra o formulário de pagamento como um diálogo
+            DialogResult resultado = formPagamento.ShowDialog();
 
-            if (success)
+            // Verifica o resultado depois de o formulário de pagamento ser fechado
+            // Se o resultado for OK, significa que a encomenda foi feita com sucesso
+            if (resultado == DialogResult.OK)
             {
-                // Fecha o formulário do carrinho após a encomenda ser bem-sucedida
+                // Fecha também o formulário do carrinho, pois a compra está concluída
                 this.Close();
             }
         }
