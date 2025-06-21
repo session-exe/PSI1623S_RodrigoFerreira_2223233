@@ -36,11 +36,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btnRemover = new Guna.UI2.WinForms.Guna2Button();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            picProduto = new Guna.UI2.WinForms.Guna2PictureBox();
             lblNome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblPreco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picProduto).BeginInit();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -50,7 +50,7 @@
             guna2Panel1.BorderThickness = 2;
             guna2Panel1.Controls.Add(lblPreco);
             guna2Panel1.Controls.Add(lblNome);
-            guna2Panel1.Controls.Add(guna2PictureBox1);
+            guna2Panel1.Controls.Add(picProduto);
             guna2Panel1.Controls.Add(btnRemover);
             guna2Panel1.CustomizableEdges = customizableEdges5;
             guna2Panel1.Dock = DockStyle.Fill;
@@ -83,24 +83,24 @@
             btnRemover.Text = "Remover";
             btnRemover.TextAlign = HorizontalAlignment.Left;
             // 
-            // guna2PictureBox1
+            // picProduto
             // 
-            guna2PictureBox1.BorderRadius = 6;
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(14, 12);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(142, 95);
-            guna2PictureBox1.TabIndex = 5;
-            guna2PictureBox1.TabStop = false;
+            picProduto.BorderRadius = 6;
+            picProduto.CustomizableEdges = customizableEdges1;
+            picProduto.ImageRotate = 0F;
+            picProduto.Location = new Point(14, 12);
+            picProduto.Name = "picProduto";
+            picProduto.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            picProduto.Size = new Size(152, 95);
+            picProduto.TabIndex = 5;
+            picProduto.TabStop = false;
             // 
             // lblNome
             // 
             lblNome.BackColor = Color.FromArgb(40, 40, 40);
             lblNome.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNome.ForeColor = Color.White;
-            lblNome.Location = new Point(186, 12);
+            lblNome.Location = new Point(191, 12);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(61, 22);
             lblNome.TabIndex = 6;
@@ -111,7 +111,7 @@
             lblPreco.BackColor = Color.FromArgb(40, 40, 40);
             lblPreco.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPreco.ForeColor = Color.White;
-            lblPreco.Location = new Point(186, 50);
+            lblPreco.Location = new Point(191, 40);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(35, 22);
             lblPreco.TabIndex = 7;
@@ -127,7 +127,7 @@
             Size = new Size(500, 120);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picProduto).EndInit();
             ResumeLayout(false);
         }
 
@@ -135,7 +135,7 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnRemover;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picProduto;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNome;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPreco;
     }
