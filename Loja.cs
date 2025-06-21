@@ -32,6 +32,7 @@ namespace OfiPecas
 
         private void Loja_Load(object sender, EventArgs e)
         {
+            TextBox_Pesquisa.Text = string.Empty; // Limpa a caixa de pesquisa ao iniciar
             CarregarPecas();      // Carrega todos os produtos por defeito
             CarregarCategorias(); // Carrega as categorias na barra lateral
         }
@@ -163,6 +164,9 @@ namespace OfiPecas
             // Mostra o formulário. Usamos ShowDialog() para que o utilizador
             // não possa interagir com a loja enquanto o carrinho estiver aberto.
             formCarrinho.ShowDialog();
+
+            // Após fechar o carrinho, podemos atualizar a loja se necessário.
+            Loja_Load(this, EventArgs.Empty);
         }
 
         private void PictureBox_Logo_Click(object sender, EventArgs e)
