@@ -164,7 +164,12 @@ namespace OfiPecas
 
         private void ImageButton_Cart_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir o formulário/painel do carrinho de compras
+            // Cria uma nova instância do formulário Carrinho, passando o ID do utilizador
+            var formCarrinho = new Carrinho(_userId);
+
+            // Mostra o formulário. Usamos ShowDialog() para que o utilizador
+            // não possa interagir com a loja enquanto o carrinho estiver aberto.
+            formCarrinho.ShowDialog();
         }
 
         private void ImageButton_Settings_Click(object sender, EventArgs e)

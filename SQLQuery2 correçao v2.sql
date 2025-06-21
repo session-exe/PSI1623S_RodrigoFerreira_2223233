@@ -81,7 +81,47 @@ CREATE TABLE dbo.ITEM_CARRINHO
 );
 GO
 
+-- 7) Tabela ENCOMENDA (Guarda a informação geral da encomenda)
+CREATE TABLE dbo.ENCOMENDA
+(
+    id_encomenda    INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_ENCOMENDA PRIMARY KEY,
+    id_utilizador   INT               NOT NULL,
+    data_encomenda  DATETIME2         NOT NULL CONSTRAINT DF_ENCOMENDA_DATA DEFAULT GETDATE(), -- Regista a data e hora automaticamente
+    valor_total     DECIMAL(18,2)     NOT NULL,
+    estado          NVARCHAR(50)      NOT NULL CONSTRAINT DF_ENCOMENDA_ESTADO DEFAULT 'Pendente', -- Ex: Pendente, Em Processamento, Enviada, Entregue, Cancelada
+
+    CONSTRAINT FK_ENCOMENDA_UTILIZADOR FOREIGN KEY(id_utilizador)
+        REFERENCES dbo.UTILIZADOR(id_utilizador)
+        ON UPDATE CASCADE
+        ON DELETE NO ACTION -- Não queremos apagar encomendas se um utilizador for apagado
+);
+GO
+
+-- 8) Tabela ITEM_ENCOMENDA (Guarda os produtos específicos de cada encomenda)
+CREATE TABLE dbo.ITEM_ENCOMENDA
+(
+    id_item_encomenda INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_ITEM_ENCOMENDA PRIMARY KEY,
+    id_encomenda      INT               NOT NULL,
+    id_peca           INT               NOT NULL,
+    quantidade        INT               NOT NULL,
+    preco_unitario    DECIMAL(18,2)     NOT NULL, -- Guarda o preço da peça no momento da compra
+
+    CONSTRAINT FK_ITEMENCOMENDA_ENCOMENDA FOREIGN KEY(id_encomenda)
+        REFERENCES dbo.ENCOMENDA(id_encomenda)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE, -- Se uma encomenda for apagada, os seus itens também são
+
+    CONSTRAINT FK_ITEMENCOMENDA_PECA FOREIGN KEY(id_peca)
+        REFERENCES dbo.PECA(id_peca)
+        ON UPDATE CASCADE
+        ON DELETE NO ACTION
+);
+GO
+
 -- Índices adicionais para otimizar pesquisas
+CREATE INDEX IX_ENCOMENDA_UTILIZADOR ON dbo.ENCOMENDA(id_utilizador);
+CREATE INDEX IX_ITEM_ENCOMENDA_ENCOMENDA ON dbo.ITEM_ENCOMENDA(id_encomenda);
+GO
 CREATE INDEX IX_ITEM_CARRINHO_CARRINHO ON dbo.ITEM_CARRINHO(id_carrinho);
 CREATE INDEX IX_PECA_CATEGORIA        ON dbo.PECA(id_categoria);
 GO
