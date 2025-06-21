@@ -121,8 +121,8 @@
   <data name="icon-settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="angle-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\angle-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,19 +136,22 @@
   <data name="icon-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo_maior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_maior.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo sem texto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo sem texto.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="angle-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\angle-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo_maior" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_maior.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-history" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-history.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
