@@ -12,23 +12,19 @@ namespace OfiPecas
 {
     public partial class ProdutoCard : UserControl
     {
-        // SOLUÇÃO: Propriedade pública para o ID da Peça.
-        // A Loja precisa disto para saber qual produto adicionar ao carrinho.
         public int PecaId { get; private set; }
         private int _userId;
 
-        // SOLUÇÃO: Evento público.
-        // O card usa isto para "avisar" a Loja que o botão foi clicado.
+        // Evento que "avisa" a Loja que o botão foi clicado
         public event EventHandler AdicionarAoCarrinhoClicked;
 
         public ProdutoCard(int produtoId, string nome, decimal preco, int stock, Image imagem, int userId)
         {
             InitializeComponent();
 
-            this.PecaId = produtoId; // Atribui o ID à propriedade pública
+            this.PecaId = produtoId;
             _userId = userId;
 
-            // Desativa o botão se o produto estiver esgotado
             if (stock > 0)
             {
                 lblStock.Text = $"Stock: {stock}";
@@ -41,14 +37,15 @@ namespace OfiPecas
             }
 
             lblNome.Text = nome;
-            lblPreco.Text = $"{preco:C}"; // Formatação para moeda (ex: 65,50 €)
+            lblPreco.Text = $"{preco:C}";
             picProduto.Image = imagem;
             picProduto.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
+        // Este método é chamado pelo clique do botão (ligado no Designer).
+        // Ele apenas dispara o evento para a Loja tratar do resto.
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            // SOLUÇÃO: Em vez de mostrar uma MessageBox, disparamos o evento.
             AdicionarAoCarrinhoClicked?.Invoke(this, EventArgs.Empty);
         }
     }
