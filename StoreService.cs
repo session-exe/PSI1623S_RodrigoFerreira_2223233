@@ -41,6 +41,7 @@ namespace OfiPecas
         public int PecaId { get; set; }
         public string Nome { get; set; }
         public decimal PrecoUnitario { get; set; }
+        public int Estoque { get; set; }
         public int Quantidade { get; set; }
         public byte[] ImagemBytes { get; set; }
         public decimal Subtotal => PrecoUnitario * Quantidade;
@@ -218,7 +219,7 @@ namespace OfiPecas
         {
             var itens = new List<ItemCarrinhoInfo>();
             string sql = @"
-                SELECT ic.id_item, p.id_peca, p.nome, p.preco, ic.quantidade, p.imagem
+                SELECT ic.id_item, p.id_peca, p.nome, p.preco, ic.quantidade, p.imagem,  p.estoque
                 FROM dbo.ITEM_CARRINHO ic
                 JOIN dbo.CARRINHO c ON ic.id_carrinho = c.id_carrinho
                 JOIN dbo.PECA p ON ic.id_peca = p.id_peca
@@ -238,6 +239,7 @@ namespace OfiPecas
                         Nome = reader.GetString("nome"),
                         PrecoUnitario = reader.GetDecimal("preco"),
                         Quantidade = reader.GetInt32("quantidade"),
+                        Estoque = reader.GetInt32("estoque"),
                         ImagemBytes = (byte[])reader["imagem"]
                     });
                 }
@@ -280,15 +282,32 @@ namespace OfiPecas
         // Finaliza a compra: cria uma encomenda e limpa o carrinho
         public static (bool success, string message) FinalizarEncomenda(int userId)
         {
-            var itensCarrinho = GetItensDoCarrinho(userId);
-            if (itensCarrinho.Count == 0) return (false, "O carrinho está vazio.");
-
             using var conn = DatabaseConnection.GetConnection();
-            using var transaction = conn.BeginTransaction();
+            using var transaction = conn.BeginTransaction(); // Começa a transação
+
             try
             {
-                decimal valorTotal = itensCarrinho.Sum(item => item.Subtotal);
+                var itensCarrinho = GetItensDoCarrinho(userId);
+                if (itensCarrinho.Count == 0)
+                {
+                    return (false, "O carrinho está vazio.");
+                }
 
+                // --- 1. VERIFICAÇÃO DE STOCK (ANTES DE FAZER QUALQUER COISA) ---
+                foreach (var item in itensCarrinho)
+                {
+                    if (item.Quantidade > item.Estoque)
+                    {
+                        // Se um item não tiver stock, aborta a transação imediatamente
+                        transaction.Rollback();
+                        return (false, $"Stock insuficiente para o produto: '{item.Nome}'. Disponível: {item.Estoque}, Pedido: {item.Quantidade}.");
+                    }
+                }
+
+                // Se chegámos aqui, há stock para tudo. Continuamos com a encomenda.
+
+                // --- 2. CRIAÇÃO DA ENCOMENDA ---
+                decimal valorTotal = itensCarrinho.Sum(item => item.Subtotal);
                 string sqlEncomenda = "INSERT INTO dbo.ENCOMENDA (id_utilizador, valor_total, estado) VALUES (@UserId, @ValorTotal, 'Pendente'); SELECT SCOPE_IDENTITY();";
                 int novaEncomendaId;
                 using (var cmdEncomenda = new SqlCommand(sqlEncomenda, conn, transaction))
@@ -298,9 +317,13 @@ namespace OfiPecas
                     novaEncomendaId = Convert.ToInt32(cmdEncomenda.ExecuteScalar());
                 }
 
+                // --- 3. INSERÇÃO DOS ITENS E ATUALIZAÇÃO DO STOCK ---
                 string sqlItemEncomenda = "INSERT INTO dbo.ITEM_ENCOMENDA (id_encomenda, id_peca, quantidade, preco_unitario) VALUES (@EncomendaId, @PecaId, @Quantidade, @PrecoUnitario)";
+                string sqlAtualizaStock = "UPDATE dbo.PECA SET estoque = estoque - @Quantidade WHERE id_peca = @PecaId";
+
                 foreach (var item in itensCarrinho)
                 {
+                    // Insere o item na tabela de encomendas
                     using (var cmdItem = new SqlCommand(sqlItemEncomenda, conn, transaction))
                     {
                         cmdItem.Parameters.AddWithValue("@EncomendaId", novaEncomendaId);
@@ -309,8 +332,17 @@ namespace OfiPecas
                         cmdItem.Parameters.AddWithValue("@PrecoUnitario", item.PrecoUnitario);
                         cmdItem.ExecuteNonQuery();
                     }
+
+                    // Abate a quantidade comprada ao stock da peça
+                    using (var cmdStock = new SqlCommand(sqlAtualizaStock, conn, transaction))
+                    {
+                        cmdStock.Parameters.AddWithValue("@Quantidade", item.Quantidade);
+                        cmdStock.Parameters.AddWithValue("@PecaId", item.PecaId);
+                        cmdStock.ExecuteNonQuery();
+                    }
                 }
 
+                // --- 4. LIMPEZA DO CARRINHO ---
                 string sqlLimparCarrinho = "DELETE FROM dbo.ITEM_CARRINHO WHERE id_carrinho = (SELECT id_carrinho FROM dbo.CARRINHO WHERE id_utilizador = @UserId)";
                 using (var cmdLimpar = new SqlCommand(sqlLimparCarrinho, conn, transaction))
                 {
@@ -318,13 +350,15 @@ namespace OfiPecas
                     cmdLimpar.ExecuteNonQuery();
                 }
 
+                // Se tudo correu bem, confirma todas as operações
                 transaction.Commit();
                 return (true, $"Encomenda nº {novaEncomendaId} criada com sucesso!");
             }
             catch (Exception ex)
             {
+                // Se algo falhou em qualquer ponto, desfaz tudo
                 transaction.Rollback();
-                return (false, $"Ocorreu um erro: {ex.Message}");
+                return (false, $"Ocorreu um erro crítico ao finalizar a encomenda: {ex.Message}");
             }
         }
     }

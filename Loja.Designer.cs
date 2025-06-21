@@ -98,7 +98,7 @@
             ImageButton_Pesquisa.ImageSize = new Size(21, 21);
             ImageButton_Pesquisa.Location = new Point(785, 17);
             ImageButton_Pesquisa.Name = "ImageButton_Pesquisa";
-            ImageButton_Pesquisa.PressedState.ImageSize = new Size(21, 21);
+            ImageButton_Pesquisa.PressedState.ImageSize = new Size(18, 18);
             ImageButton_Pesquisa.ShadowDecoration.CustomizableEdges = customizableEdges3;
             ImageButton_Pesquisa.Size = new Size(23, 23);
             ImageButton_Pesquisa.TabIndex = 25;
@@ -135,7 +135,7 @@
             ImageButton_Settings.ImageSize = new Size(30, 30);
             ImageButton_Settings.Location = new Point(1023, 10);
             ImageButton_Settings.Name = "ImageButton_Settings";
-            ImageButton_Settings.PressedState.ImageSize = new Size(30, 30);
+            ImageButton_Settings.PressedState.ImageSize = new Size(27, 27);
             ImageButton_Settings.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ImageButton_Settings.Size = new Size(35, 35);
             ImageButton_Settings.TabIndex = 3;
@@ -151,7 +151,7 @@
             ImageButton_Cart.ImageSize = new Size(30, 30);
             ImageButton_Cart.Location = new Point(971, 10);
             ImageButton_Cart.Name = "ImageButton_Cart";
-            ImageButton_Cart.PressedState.ImageSize = new Size(30, 30);
+            ImageButton_Cart.PressedState.ImageSize = new Size(27, 27);
             ImageButton_Cart.ShadowDecoration.CustomizableEdges = customizableEdges7;
             ImageButton_Cart.Size = new Size(35, 35);
             ImageButton_Cart.TabIndex = 2;
@@ -167,7 +167,7 @@
             ImageButton_Admin.ImageSize = new Size(30, 30);
             ImageButton_Admin.Location = new Point(919, 10);
             ImageButton_Admin.Name = "ImageButton_Admin";
-            ImageButton_Admin.PressedState.ImageSize = new Size(30, 30);
+            ImageButton_Admin.PressedState.ImageSize = new Size(27, 27);
             ImageButton_Admin.ShadowDecoration.CustomizableEdges = customizableEdges8;
             ImageButton_Admin.Size = new Size(35, 35);
             ImageButton_Admin.TabIndex = 1;
@@ -183,7 +183,7 @@
             ImageButton_SidePanel.ImageSize = new Size(30, 30);
             ImageButton_SidePanel.Location = new Point(79, 10);
             ImageButton_SidePanel.Name = "ImageButton_SidePanel";
-            ImageButton_SidePanel.PressedState.ImageSize = new Size(30, 30);
+            ImageButton_SidePanel.PressedState.ImageSize = new Size(27, 27);
             ImageButton_SidePanel.ShadowDecoration.CustomizableEdges = customizableEdges9;
             ImageButton_SidePanel.Size = new Size(35, 35);
             ImageButton_SidePanel.TabIndex = 0;

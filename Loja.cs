@@ -155,13 +155,6 @@ namespace OfiPecas
             flowLayoutPanel_Sidebar.Visible = !flowLayoutPanel_Sidebar.Visible;
         }
 
-        // --- Outros botões (a implementar no futuro) ---
-
-        private void ImageButton_Admin_Click(object sender, EventArgs e)
-        {
-            // TODO: Abrir o painel de administração
-        }
-
         private void ImageButton_Cart_Click(object sender, EventArgs e)
         {
             // Cria uma nova instância do formulário Carrinho, passando o ID do utilizador
@@ -172,18 +165,27 @@ namespace OfiPecas
             formCarrinho.ShowDialog();
         }
 
-        private void ImageButton_Settings_Click(object sender, EventArgs e)
-        {
-            // TODO: Abrir as definições do utilizador
-        }
-
-        #endregion
-
         private void PictureBox_Logo_Click(object sender, EventArgs e)
         {
             var login = new Login();
             login.Show();
             this.Close();
         }
+
+        // --- Outros botões (a implementar no futuro) ---
+
+        private void ImageButton_Admin_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir o painel de administração
+        }
+
+        private void ImageButton_Settings_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir as definições do utilizador
+        }
+
+
+        #endregion
+
     }
 }

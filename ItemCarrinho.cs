@@ -35,6 +35,17 @@ namespace OfiPecas
             lblNome.Text = item.Nome;
             lblPreco.Text = $"{item.PrecoUnitario:C}";
             NumUpDwn_Quantidade.Value = item.Quantidade;
+            NumUpDwn_Quantidade.Maximum = item.Estoque;
+
+            // Define o valor (só se for menor ou igual ao stock)
+            if (item.Quantidade <= NumUpDwn_Quantidade.Maximum)
+            {
+                NumUpDwn_Quantidade.Value = item.Quantidade;
+            }
+            else
+            {
+                NumUpDwn_Quantidade.Value = NumUpDwn_Quantidade.Maximum;
+            }
 
             AtualizarSubtotal();
 

@@ -128,9 +128,13 @@ GO
 
 
 select * from UTILIZADOR
-
 delete from UTILIZADOR
 
+select * from PECA
+delete from PECA
+
+select * from CATEGORIA
+delete from CATEGORIA
 
 
 
