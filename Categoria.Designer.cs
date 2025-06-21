@@ -48,7 +48,7 @@
             panelCategoria.Location = new Point(0, 0);
             panelCategoria.Name = "panelCategoria";
             panelCategoria.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            panelCategoria.Size = new Size(130, 30);
+            panelCategoria.Size = new Size(170, 30);
             panelCategoria.TabIndex = 0;
             // 
             // lblCategoria
@@ -68,7 +68,7 @@
             BackColor = Color.Transparent;
             Controls.Add(panelCategoria);
             Name = "Categoria";
-            Size = new Size(130, 30);
+            Size = new Size(170, 30);
             panelCategoria.ResumeLayout(false);
             panelCategoria.PerformLayout();
             ResumeLayout(false);

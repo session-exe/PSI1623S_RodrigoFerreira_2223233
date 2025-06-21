@@ -109,16 +109,16 @@
             // ImageButton_Back
             // 
             ImageButton_Back.CheckedState.ImageSize = new Size(64, 64);
-            ImageButton_Back.HoverState.ImageSize = new Size(33, 33);
+            ImageButton_Back.HoverState.ImageSize = new Size(27, 27);
             ImageButton_Back.Image = Properties.Resources.angle_left;
             ImageButton_Back.ImageOffset = new Point(0, 0);
             ImageButton_Back.ImageRotate = 0F;
-            ImageButton_Back.ImageSize = new Size(35, 35);
+            ImageButton_Back.ImageSize = new Size(30, 30);
             ImageButton_Back.Location = new Point(12, 12);
             ImageButton_Back.Name = "ImageButton_Back";
-            ImageButton_Back.PressedState.ImageSize = new Size(33, 33);
+            ImageButton_Back.PressedState.ImageSize = new Size(27, 27);
             ImageButton_Back.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            ImageButton_Back.Size = new Size(40, 40);
+            ImageButton_Back.Size = new Size(35, 35);
             ImageButton_Back.TabIndex = 2;
             ImageButton_Back.Click += ImageButton_Back_Click;
             // 

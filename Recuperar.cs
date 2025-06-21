@@ -55,7 +55,7 @@ namespace OfiPecas
             }
         }
 
-        private void Button_Back_Click(object sender, EventArgs e)
+        private void ImageButton_Back_Click(object sender, EventArgs e)
         {
             var login = new Login();
             login.Show();

@@ -41,10 +41,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recuperar));
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Button_Back = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             label3 = new Label();
             TextBox_Utilizador = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,7 +53,7 @@
             TextBox_NovaPassword = new Guna.UI2.WinForms.Guna2TextBox();
             label4 = new Label();
             TextBox_RepetirPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)Button_Back).BeginInit();
+            ImageButton_Back = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -71,28 +69,14 @@
             guna2HtmlLabel1.TabIndex = 33;
             guna2HtmlLabel1.Text = "Recuperar conta\r\n";
             // 
-            // Button_Back
-            // 
-            Button_Back.CustomizableEdges = customizableEdges1;
-            Button_Back.Image = Properties.Resources.angle_left;
-            Button_Back.ImageRotate = 0F;
-            Button_Back.Location = new Point(367, 122);
-            Button_Back.Name = "Button_Back";
-            Button_Back.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Button_Back.Size = new Size(21, 21);
-            Button_Back.SizeMode = PictureBoxSizeMode.Zoom;
-            Button_Back.TabIndex = 36;
-            Button_Back.TabStop = false;
-            Button_Back.Click += Button_Back_Click;
-            // 
             // guna2PictureBox2
             // 
-            guna2PictureBox2.CustomizableEdges = customizableEdges3;
+            guna2PictureBox2.CustomizableEdges = customizableEdges1;
             guna2PictureBox2.Image = Properties.Resources.logo;
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new Point(598, 71);
             guna2PictureBox2.Name = "guna2PictureBox2";
-            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2PictureBox2.Size = new Size(146, 121);
             guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox2.TabIndex = 34;
@@ -116,7 +100,7 @@
             TextBox_Utilizador.BorderColor = Color.DodgerBlue;
             TextBox_Utilizador.BorderRadius = 6;
             TextBox_Utilizador.BorderThickness = 2;
-            TextBox_Utilizador.CustomizableEdges = customizableEdges5;
+            TextBox_Utilizador.CustomizableEdges = customizableEdges3;
             TextBox_Utilizador.DefaultText = "";
             TextBox_Utilizador.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TextBox_Utilizador.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -131,7 +115,7 @@
             TextBox_Utilizador.Name = "TextBox_Utilizador";
             TextBox_Utilizador.PlaceholderText = "";
             TextBox_Utilizador.SelectedText = "";
-            TextBox_Utilizador.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            TextBox_Utilizador.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBox_Utilizador.Size = new Size(210, 30);
             TextBox_Utilizador.TabIndex = 31;
             // 
@@ -153,7 +137,7 @@
             TextBox_ChaveRecuperacao.BorderColor = Color.DodgerBlue;
             TextBox_ChaveRecuperacao.BorderRadius = 6;
             TextBox_ChaveRecuperacao.BorderThickness = 2;
-            TextBox_ChaveRecuperacao.CustomizableEdges = customizableEdges7;
+            TextBox_ChaveRecuperacao.CustomizableEdges = customizableEdges5;
             TextBox_ChaveRecuperacao.DefaultText = "";
             TextBox_ChaveRecuperacao.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TextBox_ChaveRecuperacao.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -168,14 +152,14 @@
             TextBox_ChaveRecuperacao.Name = "TextBox_ChaveRecuperacao";
             TextBox_ChaveRecuperacao.PlaceholderText = "";
             TextBox_ChaveRecuperacao.SelectedText = "";
-            TextBox_ChaveRecuperacao.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            TextBox_ChaveRecuperacao.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TextBox_ChaveRecuperacao.Size = new Size(210, 30);
             TextBox_ChaveRecuperacao.TabIndex = 27;
             // 
             // Button_Recuperar
             // 
             Button_Recuperar.BorderRadius = 6;
-            Button_Recuperar.CustomizableEdges = customizableEdges9;
+            Button_Recuperar.CustomizableEdges = customizableEdges7;
             Button_Recuperar.DisabledState.BorderColor = Color.DarkGray;
             Button_Recuperar.DisabledState.CustomBorderColor = Color.DarkGray;
             Button_Recuperar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -185,7 +169,7 @@
             Button_Recuperar.ForeColor = Color.White;
             Button_Recuperar.Location = new Point(442, 386);
             Button_Recuperar.Name = "Button_Recuperar";
-            Button_Recuperar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            Button_Recuperar.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Button_Recuperar.Size = new Size(210, 30);
             Button_Recuperar.TabIndex = 26;
             Button_Recuperar.Text = "Recuperar";
@@ -209,7 +193,7 @@
             TextBox_NovaPassword.BorderColor = Color.DodgerBlue;
             TextBox_NovaPassword.BorderRadius = 6;
             TextBox_NovaPassword.BorderThickness = 2;
-            TextBox_NovaPassword.CustomizableEdges = customizableEdges11;
+            TextBox_NovaPassword.CustomizableEdges = customizableEdges9;
             TextBox_NovaPassword.DefaultText = "";
             TextBox_NovaPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TextBox_NovaPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -224,7 +208,7 @@
             TextBox_NovaPassword.Name = "TextBox_NovaPassword";
             TextBox_NovaPassword.PlaceholderText = "";
             TextBox_NovaPassword.SelectedText = "";
-            TextBox_NovaPassword.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            TextBox_NovaPassword.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TextBox_NovaPassword.Size = new Size(210, 30);
             TextBox_NovaPassword.TabIndex = 37;
             TextBox_NovaPassword.UseSystemPasswordChar = true;
@@ -247,7 +231,7 @@
             TextBox_RepetirPassword.BorderColor = Color.DodgerBlue;
             TextBox_RepetirPassword.BorderRadius = 6;
             TextBox_RepetirPassword.BorderThickness = 2;
-            TextBox_RepetirPassword.CustomizableEdges = customizableEdges13;
+            TextBox_RepetirPassword.CustomizableEdges = customizableEdges11;
             TextBox_RepetirPassword.DefaultText = "";
             TextBox_RepetirPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TextBox_RepetirPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -262,10 +246,26 @@
             TextBox_RepetirPassword.Name = "TextBox_RepetirPassword";
             TextBox_RepetirPassword.PlaceholderText = "";
             TextBox_RepetirPassword.SelectedText = "";
-            TextBox_RepetirPassword.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            TextBox_RepetirPassword.ShadowDecoration.CustomizableEdges = customizableEdges12;
             TextBox_RepetirPassword.Size = new Size(210, 30);
             TextBox_RepetirPassword.TabIndex = 39;
             TextBox_RepetirPassword.UseSystemPasswordChar = true;
+            // 
+            // ImageButton_Back
+            // 
+            ImageButton_Back.CheckedState.ImageSize = new Size(64, 64);
+            ImageButton_Back.HoverState.ImageSize = new Size(22, 22);
+            ImageButton_Back.Image = Properties.Resources.angle_left;
+            ImageButton_Back.ImageOffset = new Point(0, 0);
+            ImageButton_Back.ImageRotate = 0F;
+            ImageButton_Back.ImageSize = new Size(25, 25);
+            ImageButton_Back.Location = new Point(366, 113);
+            ImageButton_Back.Name = "ImageButton_Back";
+            ImageButton_Back.PressedState.ImageSize = new Size(22, 22);
+            ImageButton_Back.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            ImageButton_Back.Size = new Size(30, 30);
+            ImageButton_Back.TabIndex = 41;
+            ImageButton_Back.Click += ImageButton_Back_Click;
             // 
             // Recuperar
             // 
@@ -273,13 +273,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(1084, 561);
+            Controls.Add(ImageButton_Back);
             Controls.Add(label4);
             Controls.Add(TextBox_RepetirPassword);
             Controls.Add(label2);
             Controls.Add(TextBox_NovaPassword);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2PictureBox2);
-            Controls.Add(Button_Back);
             Controls.Add(label3);
             Controls.Add(TextBox_Utilizador);
             Controls.Add(label1);
@@ -289,7 +289,6 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Recuperar";
             Text = "OfiPeças";
-            ((System.ComponentModel.ISupportInitialize)Button_Back).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -297,7 +296,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2PictureBox Button_Back;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Label label3;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Utilizador;
@@ -308,5 +306,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_NovaPassword;
         private Label label4;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_RepetirPassword;
+        private Guna.UI2.WinForms.Guna2ImageButton ImageButton_Back;
     }
 }

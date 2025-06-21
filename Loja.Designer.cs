@@ -223,7 +223,7 @@
             flowLayoutPanel_Sidebar.Location = new Point(1, 55);
             flowLayoutPanel_Sidebar.Name = "flowLayoutPanel_Sidebar";
             flowLayoutPanel_Sidebar.Padding = new Padding(4, 8, 0, 0);
-            flowLayoutPanel_Sidebar.Size = new Size(187, 505);
+            flowLayoutPanel_Sidebar.Size = new Size(185, 505);
             flowLayoutPanel_Sidebar.TabIndex = 0;
             flowLayoutPanel_Sidebar.Visible = false;
             // 
