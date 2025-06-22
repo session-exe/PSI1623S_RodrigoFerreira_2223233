@@ -54,12 +54,18 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             GroupBox_Pagamento = new Guna.UI2.WinForms.Guna2GroupBox();
             label6 = new Label();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            TextBox_Telefone = new Guna.UI2.WinForms.Guna2TextBox();
             label5 = new Label();
             TextBox_Endereco = new Guna.UI2.WinForms.Guna2TextBox();
-            Button_Pagar = new Guna.UI2.WinForms.Guna2Button();
+            Button_GuardarDados = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             TextBox_Email = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
@@ -76,8 +82,13 @@
             TextBox_PasswordAtual = new Guna.UI2.WinForms.Guna2TextBox();
             label12 = new Label();
             TextBox_NovaPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            Button_ApagarConta = new Guna.UI2.WinForms.Guna2Button();
+            label8 = new Label();
+            TextBox_PasswordConfirmarApagar = new Guna.UI2.WinForms.Guna2TextBox();
             GroupBox_Pagamento.SuspendLayout();
             guna2GroupBox1.SuspendLayout();
+            guna2GroupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // GroupBox_Pagamento
@@ -87,10 +98,10 @@
             GroupBox_Pagamento.BorderRadius = 12;
             GroupBox_Pagamento.BorderThickness = 2;
             GroupBox_Pagamento.Controls.Add(label6);
-            GroupBox_Pagamento.Controls.Add(guna2TextBox2);
+            GroupBox_Pagamento.Controls.Add(TextBox_Telefone);
             GroupBox_Pagamento.Controls.Add(label5);
             GroupBox_Pagamento.Controls.Add(TextBox_Endereco);
-            GroupBox_Pagamento.Controls.Add(Button_Pagar);
+            GroupBox_Pagamento.Controls.Add(Button_GuardarDados);
             GroupBox_Pagamento.Controls.Add(label1);
             GroupBox_Pagamento.Controls.Add(TextBox_Email);
             GroupBox_Pagamento.Controls.Add(label2);
@@ -119,34 +130,34 @@
             label6.Location = new Point(44, 284);
             label6.Name = "label6";
             label6.Padding = new Padding(1, 0, 1, 0);
-            label6.Size = new Size(120, 17);
+            label6.Size = new Size(59, 17);
             label6.TabIndex = 35;
-            label6.Text = "Nome da Empresa";
+            label6.Text = "Telefone";
             // 
-            // guna2TextBox2
+            // TextBox_Telefone
             // 
-            guna2TextBox2.BackColor = Color.Transparent;
-            guna2TextBox2.BorderColor = Color.DodgerBlue;
-            guna2TextBox2.BorderRadius = 6;
-            guna2TextBox2.BorderThickness = 2;
-            guna2TextBox2.CustomizableEdges = customizableEdges1;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FillColor = Color.FromArgb(40, 40, 40);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Segoe UI", 9F);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(34, 293);
-            guna2TextBox2.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderText = "";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox2.Size = new Size(210, 30);
-            guna2TextBox2.TabIndex = 34;
+            TextBox_Telefone.BackColor = Color.Transparent;
+            TextBox_Telefone.BorderColor = Color.DodgerBlue;
+            TextBox_Telefone.BorderRadius = 6;
+            TextBox_Telefone.BorderThickness = 2;
+            TextBox_Telefone.CustomizableEdges = customizableEdges1;
+            TextBox_Telefone.DefaultText = "";
+            TextBox_Telefone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TextBox_Telefone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TextBox_Telefone.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TextBox_Telefone.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TextBox_Telefone.FillColor = Color.FromArgb(40, 40, 40);
+            TextBox_Telefone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TextBox_Telefone.Font = new Font("Segoe UI", 9F);
+            TextBox_Telefone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TextBox_Telefone.Location = new Point(34, 293);
+            TextBox_Telefone.Margin = new Padding(3, 4, 3, 4);
+            TextBox_Telefone.Name = "TextBox_Telefone";
+            TextBox_Telefone.PlaceholderText = "";
+            TextBox_Telefone.SelectedText = "";
+            TextBox_Telefone.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            TextBox_Telefone.Size = new Size(210, 30);
+            TextBox_Telefone.TabIndex = 34;
             // 
             // label5
             // 
@@ -156,9 +167,9 @@
             label5.Location = new Point(44, 237);
             label5.Name = "label5";
             label5.Padding = new Padding(1, 0, 1, 0);
-            label5.Size = new Size(120, 17);
+            label5.Size = new Size(65, 17);
             label5.TabIndex = 33;
-            label5.Text = "Nome da Empresa";
+            label5.Text = "Endereço";
             // 
             // TextBox_Endereco
             // 
@@ -185,23 +196,23 @@
             TextBox_Endereco.Size = new Size(210, 30);
             TextBox_Endereco.TabIndex = 32;
             // 
-            // Button_Pagar
+            // Button_GuardarDados
             // 
-            Button_Pagar.BorderRadius = 6;
-            Button_Pagar.CustomizableEdges = customizableEdges5;
-            Button_Pagar.DisabledState.BorderColor = Color.DarkGray;
-            Button_Pagar.DisabledState.CustomBorderColor = Color.DarkGray;
-            Button_Pagar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Button_Pagar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Button_Pagar.FillColor = Color.DodgerBlue;
-            Button_Pagar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Button_Pagar.ForeColor = Color.White;
-            Button_Pagar.Location = new Point(34, 363);
-            Button_Pagar.Name = "Button_Pagar";
-            Button_Pagar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Button_Pagar.Size = new Size(210, 30);
-            Button_Pagar.TabIndex = 31;
-            Button_Pagar.Text = "Confirmar Pagamento";
+            Button_GuardarDados.BorderRadius = 6;
+            Button_GuardarDados.CustomizableEdges = customizableEdges5;
+            Button_GuardarDados.DisabledState.BorderColor = Color.DarkGray;
+            Button_GuardarDados.DisabledState.CustomBorderColor = Color.DarkGray;
+            Button_GuardarDados.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Button_GuardarDados.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Button_GuardarDados.FillColor = Color.DodgerBlue;
+            Button_GuardarDados.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Button_GuardarDados.ForeColor = Color.White;
+            Button_GuardarDados.Location = new Point(34, 363);
+            Button_GuardarDados.Name = "Button_GuardarDados";
+            Button_GuardarDados.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Button_GuardarDados.Size = new Size(210, 30);
+            Button_GuardarDados.TabIndex = 31;
+            Button_GuardarDados.Text = "GuardarDados";
             // 
             // label1
             // 
@@ -505,12 +516,89 @@
             TextBox_NovaPassword.Size = new Size(210, 30);
             TextBox_NovaPassword.TabIndex = 21;
             // 
+            // guna2GroupBox2
+            // 
+            guna2GroupBox2.BackColor = Color.Transparent;
+            guna2GroupBox2.BorderColor = Color.DodgerBlue;
+            guna2GroupBox2.BorderRadius = 12;
+            guna2GroupBox2.BorderThickness = 2;
+            guna2GroupBox2.Controls.Add(Button_ApagarConta);
+            guna2GroupBox2.Controls.Add(label8);
+            guna2GroupBox2.Controls.Add(TextBox_PasswordConfirmarApagar);
+            guna2GroupBox2.CustomBorderColor = Color.DodgerBlue;
+            guna2GroupBox2.CustomizableEdges = customizableEdges31;
+            guna2GroupBox2.FillColor = Color.FromArgb(40, 40, 40);
+            guna2GroupBox2.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
+            guna2GroupBox2.ForeColor = Color.White;
+            guna2GroupBox2.Location = new Point(673, 12);
+            guna2GroupBox2.Name = "guna2GroupBox2";
+            guna2GroupBox2.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2GroupBox2.Size = new Size(275, 323);
+            guna2GroupBox2.TabIndex = 3;
+            guna2GroupBox2.Text = "Apagar Conta";
+            // 
+            // Button_ApagarConta
+            // 
+            Button_ApagarConta.BorderRadius = 6;
+            Button_ApagarConta.CustomizableEdges = customizableEdges27;
+            Button_ApagarConta.DisabledState.BorderColor = Color.DarkGray;
+            Button_ApagarConta.DisabledState.CustomBorderColor = Color.DarkGray;
+            Button_ApagarConta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Button_ApagarConta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Button_ApagarConta.FillColor = Color.DodgerBlue;
+            Button_ApagarConta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Button_ApagarConta.ForeColor = Color.White;
+            Button_ApagarConta.Location = new Point(34, 246);
+            Button_ApagarConta.Name = "Button_ApagarConta";
+            Button_ApagarConta.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            Button_ApagarConta.Size = new Size(210, 30);
+            Button_ApagarConta.TabIndex = 31;
+            Button_ApagarConta.Text = "Apagar Conta";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.DodgerBlue;
+            label8.Location = new Point(44, 58);
+            label8.Name = "label8";
+            label8.Padding = new Padding(1, 0, 1, 0);
+            label8.Size = new Size(66, 17);
+            label8.TabIndex = 24;
+            label8.Text = "Password";
+            // 
+            // TextBox_PasswordConfirmarApagar
+            // 
+            TextBox_PasswordConfirmarApagar.BackColor = Color.Transparent;
+            TextBox_PasswordConfirmarApagar.BorderColor = Color.DodgerBlue;
+            TextBox_PasswordConfirmarApagar.BorderRadius = 6;
+            TextBox_PasswordConfirmarApagar.BorderThickness = 2;
+            TextBox_PasswordConfirmarApagar.CustomizableEdges = customizableEdges29;
+            TextBox_PasswordConfirmarApagar.DefaultText = "";
+            TextBox_PasswordConfirmarApagar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TextBox_PasswordConfirmarApagar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TextBox_PasswordConfirmarApagar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TextBox_PasswordConfirmarApagar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TextBox_PasswordConfirmarApagar.FillColor = Color.FromArgb(40, 40, 40);
+            TextBox_PasswordConfirmarApagar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TextBox_PasswordConfirmarApagar.Font = new Font("Segoe UI", 9F);
+            TextBox_PasswordConfirmarApagar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TextBox_PasswordConfirmarApagar.Location = new Point(34, 67);
+            TextBox_PasswordConfirmarApagar.Margin = new Padding(3, 4, 3, 4);
+            TextBox_PasswordConfirmarApagar.Name = "TextBox_PasswordConfirmarApagar";
+            TextBox_PasswordConfirmarApagar.PlaceholderText = "";
+            TextBox_PasswordConfirmarApagar.SelectedText = "";
+            TextBox_PasswordConfirmarApagar.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            TextBox_PasswordConfirmarApagar.Size = new Size(210, 30);
+            TextBox_PasswordConfirmarApagar.TabIndex = 23;
+            // 
             // DefinicoesUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(960, 459);
+            Controls.Add(guna2GroupBox2);
             Controls.Add(guna2GroupBox1);
             Controls.Add(GroupBox_Pagamento);
             Name = "DefinicoesUser";
@@ -519,13 +607,15 @@
             GroupBox_Pagamento.PerformLayout();
             guna2GroupBox1.ResumeLayout(false);
             guna2GroupBox1.PerformLayout();
+            guna2GroupBox2.ResumeLayout(false);
+            guna2GroupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2GroupBox GroupBox_Pagamento;
-        private Guna.UI2.WinForms.Guna2Button Button_Pagar;
+        private Guna.UI2.WinForms.Guna2Button Button_GuardarDados;
         private Label label6;
         private Label label1;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Email;
@@ -535,7 +625,7 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Username;
         private Label label4;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_RecoveryKey;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_Telefone;
         private Label label5;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Endereco;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_Card;
@@ -547,5 +637,9 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_PasswordAtual;
         private Label label12;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_NovaPassword;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private Guna.UI2.WinForms.Guna2Button Button_ApagarConta;
+        private Label label8;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_PasswordConfirmarApagar;
     }
 }
