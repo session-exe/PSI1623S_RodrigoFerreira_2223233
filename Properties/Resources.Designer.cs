@@ -83,6 +83,16 @@ namespace OfiPecas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_download_pdf {
+            get {
+                object obj = ResourceManager.GetObject("icon-download-pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_history {
             get {
                 object obj = ResourceManager.GetObject("icon-history", resourceCulture);

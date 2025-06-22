@@ -45,4 +45,23 @@ namespace OfiPecas
             using (var ms = new MemoryStream(ImagemBytes)) { return Image.FromStream(ms); }
         }
     }
+
+    // Representa o resumo de uma encomenda para a lista do histórico
+    public class EncomendaInfo
+    {
+        public int Id { get; set; }
+        public DateTime Data { get; set; }
+        public decimal ValorTotal { get; set; }
+        public string Estado { get; set; }
+    }
+
+    // Representa um item detalhado dentro de uma encomenda (para o PDF)
+    public class ItemEncomendaInfo
+    {
+        public string NomePeca { get; set; }
+        public int Quantidade { get; set; }
+        public decimal PrecoUnitario { get; set; }
+        public decimal Subtotal => Quantidade * PrecoUnitario;
+    }
+
 }

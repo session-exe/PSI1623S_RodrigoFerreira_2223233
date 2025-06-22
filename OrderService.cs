@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -81,5 +82,66 @@ namespace OfiPecas
                 return (false, $"Ocorreu um erro crítico ao finalizar a encomenda: {ex.Message}");
             }
         }
+
+        // Devolve a lista de todas as encomendas de um utilizador
+        public static List<EncomendaInfo> GetHistoricoEncomendas(int userId)
+        {
+            var encomendas = new List<EncomendaInfo>();
+            string sql = "SELECT id_encomenda, data_encomenda, valor_total, estado FROM dbo.ENCOMENDA WHERE id_utilizador = @UserId ORDER BY data_encomenda DESC";
+
+            try
+            {
+                using var conn = DatabaseConnection.GetConnection();
+                using var cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+
+                using var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    encomendas.Add(new EncomendaInfo
+                    {
+                        Id = reader.GetInt32("id_encomenda"),
+                        Data = reader.GetDateTime("data_encomenda"),
+                        ValorTotal = reader.GetDecimal("valor_total"),
+                        Estado = reader.GetString("estado")
+                    });
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Erro ao buscar histórico: {ex.Message}"); }
+            return encomendas;
+        }
+
+        // Devolve os itens detalhados de uma única encomenda
+        public static List<ItemEncomendaInfo> GetDetalhesEncomenda(int encomendaId)
+        {
+            var itens = new List<ItemEncomendaInfo>();
+            string sql = @"
+                SELECT p.nome, ie.quantidade, ie.preco_unitario
+                FROM dbo.ITEM_ENCOMENDA ie
+                JOIN dbo.PECA p ON ie.id_peca = p.id_peca
+                WHERE ie.id_encomenda = @EncomendaId";
+
+            try
+            {
+                using var conn = DatabaseConnection.GetConnection();
+                using var cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@EncomendaId", encomendaId);
+
+                using var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    itens.Add(new ItemEncomendaInfo
+                    {
+                        NomePeca = reader.GetString("nome"),
+                        Quantidade = reader.GetInt32("quantidade"),
+                        PrecoUnitario = reader.GetDecimal("preco_unitario")
+                    });
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Erro ao buscar detalhes da encomenda: {ex.Message}"); }
+            return itens;
+        }
+
+
     }
 }
