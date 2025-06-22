@@ -4,6 +4,16 @@ using System.IO;
 
 namespace OfiPecas
 {
+    // Representa os dados de um utilizador para o formulário de definições
+    public class UserInfo
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string NomeEmpresa { get; set; }
+        public string Endereco { get; set; }
+        public string Telefone { get; set; }
+    }
+
     // Representa uma Peça do catálogo
     public class Peca
     {
