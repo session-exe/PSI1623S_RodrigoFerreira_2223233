@@ -33,6 +33,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Carrinho));
             flowPanel_Produtos = new FlowLayoutPanel();
             Panel_Comprar = new Guna.UI2.WinForms.Guna2Panel();
             lbl_Total = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -131,6 +132,7 @@
             Controls.Add(ImageButton_Back);
             Controls.Add(Panel_Comprar);
             Controls.Add(flowPanel_Produtos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Carrinho";
             Text = "OfiPeças";
             Panel_Comprar.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using PdfSharp.Drawing;
+using PdfSharp.Fonts;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,13 @@ namespace OfiPecas
 {
     public static class PdfService
     {
+        // Construtor estático para configurar o FontResolver uma única vez.
+        // Isto garante que a biblioteca encontra as fontes do Windows.
+        static PdfService()
+        {
+            GlobalFontSettings.FontResolver = new FontResolver();
+        }
+
         public static void GerarFaturaPdf(EncomendaInfo encomenda, List<ItemEncomendaInfo> itens)
         {
             try
@@ -27,15 +35,15 @@ namespace OfiPecas
                     PdfPage page = document.AddPage();
                     XGraphics gfx = XGraphics.FromPdfPage(page);
 
-                    // Fontes definidas da forma mais simples possível
-                    XFont fontTitulo = new XFont("Arial", 20);
-                    XFont fontNormal = new XFont("Arial", 10);
-                    XFont fontTabelaHeader = new XFont("Arial", 10);
+                    // --- CORREÇÃO: Usando XFontStyleEx para a versão 6.1.0 ---
+                    XFont fontTitulo = new XFont("Arial", 20, XFontStyleEx.Bold);
+                    XFont fontNormal = new XFont("Arial", 10, XFontStyleEx.Regular);
+                    XFont fontTabelaHeader = new XFont("Arial", 10, XFontStyleEx.Bold);
 
-                    int y = 40; // Posição vertical inicial
+                    int y = 40; // Posição vertical
 
                     // Cabeçalho
-                    gfx.DrawString("Fatura OfiPecas", fontTitulo, XBrushes.Black, new XRect(0, y, page.Width, 0), XStringFormats.TopCenter);
+                    gfx.DrawString("Fatura OfiPeças", fontTitulo, XBrushes.Black, new XRect(0, y, page.Width, 0), XStringFormats.TopCenter);
                     y += 40;
                     gfx.DrawString($"Encomenda Nº: {encomenda.Id}", fontNormal, XBrushes.Black, 40, y);
                     y += 15;
@@ -44,7 +52,7 @@ namespace OfiPecas
                     gfx.DrawString($"Estado: {encomenda.Estado}", fontNormal, XBrushes.Black, 40, y);
                     y += 40;
 
-                    // Tabela de Itens (Cabeçalho)
+                    // Tabela
                     gfx.DrawString("Produto", fontTabelaHeader, XBrushes.Black, 40, y);
                     gfx.DrawString("Qtd.", fontTabelaHeader, XBrushes.Black, 350, y);
                     gfx.DrawString("Preço Unit.", fontTabelaHeader, XBrushes.Black, 400, y);
@@ -53,7 +61,6 @@ namespace OfiPecas
                     gfx.DrawLine(XPens.Black, 40, y, page.Width - 40, y);
                     y += 20;
 
-                    // Itens
                     foreach (var item in itens)
                     {
                         gfx.DrawString(item.NomePeca, fontNormal, XBrushes.Black, 40, y);
@@ -66,7 +73,7 @@ namespace OfiPecas
                     // Total
                     gfx.DrawLine(XPens.Black, 40, y, page.Width - 40, y);
                     y += 20;
-                    gfx.DrawString($"Valor Total: {encomenda.ValorTotal:C}", fontTabelaHeader, XBrushes.Black, 500, y);
+                    gfx.DrawString($"Valor Total: {encomenda.ValorTotal:C}", fontTabelaHeader, XBrushes.Black, 450, y);
 
                     document.Save(caminho);
                     MessageBox.Show($"Fatura guardada com sucesso em:\n{caminho}", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

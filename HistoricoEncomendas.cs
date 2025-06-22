@@ -64,5 +64,7 @@ namespace OfiPecas
                 PdfService.GerarFaturaPdf(control.InfoEncomenda, itens);
             }
         }
+
+
     }
 }
