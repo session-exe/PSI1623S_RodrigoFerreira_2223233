@@ -19,6 +19,7 @@ namespace OfiPecas
             CarregarDadosDoUtilizador();
         }
 
+        // Método central para carregar ou recarregar os dados
         private void CarregarDadosDoUtilizador()
         {
             var userData = UserService.GetUserData(_userId);
@@ -40,12 +41,16 @@ namespace OfiPecas
 
         private void Button_GuardarDados_Click(object sender, EventArgs e)
         {
+            // Valida se os campos obrigatórios estão preenchidos
             if (string.IsNullOrWhiteSpace(TextBox_Email.Text) || string.IsNullOrWhiteSpace(TextBox_NomeEmpresa.Text) || string.IsNullOrWhiteSpace(TextBox_Endereco.Text))
             {
                 MessageBox.Show("Os campos Email, Nome da Empresa e Endereço são obrigatórios.", "Campos em Falta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // CORREÇÃO: Recarrega os dados para restaurar os campos
+                CarregarDadosDoUtilizador();
                 return;
             }
 
+            // Se a validação passar, tenta atualizar na base de dados
             var (success, message) = UserService.UpdateUserData(
                 _userId,
                 TextBox_Email.Text.Trim(),
@@ -53,7 +58,14 @@ namespace OfiPecas
                 TextBox_Endereco.Text.Trim(),
                 TextBox_Telefone.Text.Trim()
             );
+
             MessageBox.Show(message, success ? "Sucesso" : "Erro", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+
+            // Se a atualização na BD falhar (ex: email duplicado), também recarrega
+            if (!success)
+            {
+                CarregarDadosDoUtilizador();
+            }
         }
 
         private void Button_AlterarPassword_Click(object sender, EventArgs e)
@@ -73,12 +85,10 @@ namespace OfiPecas
             var (success, message) = UserService.ChangePassword(_userId, TextBox_PasswordAtual.Text, TextBox_NovaPassword.Text);
             MessageBox.Show(message, success ? "Sucesso" : "Erro", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
 
-            if (success)
-            {
-                TextBox_PasswordAtual.Clear();
-                TextBox_NovaPassword.Clear();
-                TextBox_ConfirmarPassword.Clear();
-            }
+            // Limpa sempre os campos de password após a tentativa
+            TextBox_PasswordAtual.Clear();
+            TextBox_NovaPassword.Clear();
+            TextBox_ConfirmarPassword.Clear();
         }
 
         private void Button_ApagarConta_Click(object sender, EventArgs e)
@@ -108,6 +118,11 @@ namespace OfiPecas
             {
                 MessageBox.Show("A sua conta foi apagada com sucesso. A aplicação será reiniciada.", "Conta Apagada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Restart();
+            }
+            else
+            {
+                // Se a password para apagar a conta estiver errada, limpa o campo
+                TextBox_PasswordConfirmarApagar.Clear();
             }
         }
     }

@@ -115,7 +115,7 @@
             GroupBox_Pagamento.FillColor = Color.FromArgb(40, 40, 40);
             GroupBox_Pagamento.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             GroupBox_Pagamento.ForeColor = Color.White;
-            GroupBox_Pagamento.Location = new Point(45, 12);
+            GroupBox_Pagamento.Location = new Point(44, 36);
             GroupBox_Pagamento.Name = "GroupBox_Pagamento";
             GroupBox_Pagamento.ShadowDecoration.CustomizableEdges = customizableEdges16;
             GroupBox_Pagamento.Size = new Size(275, 414);
@@ -127,7 +127,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.DodgerBlue;
-            label6.Location = new Point(44, 284);
+            label6.Location = new Point(44, 288);
             label6.Name = "label6";
             label6.Padding = new Padding(1, 0, 1, 0);
             label6.Size = new Size(59, 17);
@@ -150,7 +150,7 @@
             TextBox_Telefone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_Telefone.Font = new Font("Segoe UI", 9F);
             TextBox_Telefone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Telefone.Location = new Point(34, 293);
+            TextBox_Telefone.Location = new Point(34, 297);
             TextBox_Telefone.Margin = new Padding(3, 4, 3, 4);
             TextBox_Telefone.Name = "TextBox_Telefone";
             TextBox_Telefone.PlaceholderText = "";
@@ -164,7 +164,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.DodgerBlue;
-            label5.Location = new Point(44, 237);
+            label5.Location = new Point(44, 242);
             label5.Name = "label5";
             label5.Padding = new Padding(1, 0, 1, 0);
             label5.Size = new Size(65, 17);
@@ -187,7 +187,7 @@
             TextBox_Endereco.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_Endereco.Font = new Font("Segoe UI", 9F);
             TextBox_Endereco.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Endereco.Location = new Point(34, 246);
+            TextBox_Endereco.Location = new Point(34, 251);
             TextBox_Endereco.Margin = new Padding(3, 4, 3, 4);
             TextBox_Endereco.Name = "TextBox_Endereco";
             TextBox_Endereco.PlaceholderText = "";
@@ -207,7 +207,7 @@
             Button_GuardarDados.FillColor = Color.DodgerBlue;
             Button_GuardarDados.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_GuardarDados.ForeColor = Color.White;
-            Button_GuardarDados.Location = new Point(34, 363);
+            Button_GuardarDados.Location = new Point(34, 355);
             Button_GuardarDados.Name = "Button_GuardarDados";
             Button_GuardarDados.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Button_GuardarDados.Size = new Size(210, 30);
@@ -257,7 +257,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DodgerBlue;
-            label2.Location = new Point(44, 194);
+            label2.Location = new Point(44, 196);
             label2.Name = "label2";
             label2.Padding = new Padding(1, 0, 1, 0);
             label2.Size = new Size(120, 17);
@@ -280,7 +280,7 @@
             TextBox_NomeEmpresa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_NomeEmpresa.Font = new Font("Segoe UI", 9F);
             TextBox_NomeEmpresa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_NomeEmpresa.Location = new Point(34, 203);
+            TextBox_NomeEmpresa.Location = new Point(34, 205);
             TextBox_NomeEmpresa.Margin = new Padding(3, 4, 3, 4);
             TextBox_NomeEmpresa.Name = "TextBox_NomeEmpresa";
             TextBox_NomeEmpresa.PlaceholderText = "";
@@ -331,7 +331,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DodgerBlue;
-            label4.Location = new Point(44, 102);
+            label4.Location = new Point(44, 104);
             label4.Name = "label4";
             label4.Padding = new Padding(1, 0, 1, 0);
             label4.Size = new Size(84, 17);
@@ -354,7 +354,7 @@
             TextBox_RecoveryKey.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_RecoveryKey.Font = new Font("Segoe UI", 9F);
             TextBox_RecoveryKey.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_RecoveryKey.Location = new Point(34, 111);
+            TextBox_RecoveryKey.Location = new Point(34, 113);
             TextBox_RecoveryKey.Margin = new Padding(3, 4, 3, 4);
             TextBox_RecoveryKey.Name = "TextBox_RecoveryKey";
             TextBox_RecoveryKey.PlaceholderText = "";
@@ -381,7 +381,7 @@
             guna2GroupBox1.FillColor = Color.FromArgb(40, 40, 40);
             guna2GroupBox1.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.White;
-            guna2GroupBox1.Location = new Point(345, 12);
+            guna2GroupBox1.Location = new Point(344, 36);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2GroupBox1.Size = new Size(275, 323);
@@ -399,7 +399,7 @@
             Button_AlterarPassword.FillColor = Color.DodgerBlue;
             Button_AlterarPassword.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_AlterarPassword.ForeColor = Color.White;
-            Button_AlterarPassword.Location = new Point(34, 246);
+            Button_AlterarPassword.Location = new Point(34, 251);
             Button_AlterarPassword.Name = "Button_AlterarPassword";
             Button_AlterarPassword.ShadowDecoration.CustomizableEdges = customizableEdges18;
             Button_AlterarPassword.Size = new Size(210, 30);
@@ -486,7 +486,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.DodgerBlue;
-            label12.Location = new Point(44, 102);
+            label12.Location = new Point(44, 104);
             label12.Name = "label12";
             label12.Padding = new Padding(1, 0, 1, 0);
             label12.Size = new Size(101, 17);
@@ -509,7 +509,7 @@
             TextBox_NovaPassword.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_NovaPassword.Font = new Font("Segoe UI", 9F);
             TextBox_NovaPassword.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_NovaPassword.Location = new Point(34, 111);
+            TextBox_NovaPassword.Location = new Point(34, 113);
             TextBox_NovaPassword.Margin = new Padding(3, 4, 3, 4);
             TextBox_NovaPassword.Name = "TextBox_NovaPassword";
             TextBox_NovaPassword.PlaceholderText = "";
@@ -532,10 +532,10 @@
             guna2GroupBox2.FillColor = Color.FromArgb(40, 40, 40);
             guna2GroupBox2.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             guna2GroupBox2.ForeColor = Color.White;
-            guna2GroupBox2.Location = new Point(645, 12);
+            guna2GroupBox2.Location = new Point(644, 36);
             guna2GroupBox2.Name = "guna2GroupBox2";
             guna2GroupBox2.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            guna2GroupBox2.Size = new Size(275, 323);
+            guna2GroupBox2.Size = new Size(275, 213);
             guna2GroupBox2.TabIndex = 3;
             guna2GroupBox2.Text = "Apagar Conta";
             // 
@@ -550,7 +550,7 @@
             Button_ApagarConta.FillColor = Color.DodgerBlue;
             Button_ApagarConta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_ApagarConta.ForeColor = Color.White;
-            Button_ApagarConta.Location = new Point(34, 246);
+            Button_ApagarConta.Location = new Point(34, 159);
             Button_ApagarConta.Name = "Button_ApagarConta";
             Button_ApagarConta.ShadowDecoration.CustomizableEdges = customizableEdges28;
             Button_ApagarConta.Size = new Size(210, 30);
@@ -600,7 +600,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(960, 459);
+            ClientSize = new Size(969, 486);
             Controls.Add(guna2GroupBox2);
             Controls.Add(guna2GroupBox1);
             Controls.Add(GroupBox_Pagamento);

@@ -7,9 +7,11 @@ namespace OfiPecas
     // Representa os dados de um utilizador para o formulário de definições
     public class UserInfo
     {
+        public int Id { get; set; } // <-- ADICIONADO
         public string Username { get; set; }
-        public string RecoveryKey { get; set; } // Propriedade adicionada
         public string Email { get; set; }
+        public bool IsAdmin { get; set; } // <-- ADICIONADO
+        public string RecoveryKey { get; set; }
         public string NomeEmpresa { get; set; }
         public string Endereco { get; set; }
         public string Telefone { get; set; }

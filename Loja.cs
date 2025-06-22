@@ -120,7 +120,6 @@ namespace OfiPecas
 
         private void ImageButton_Settings_Click(object sender, EventArgs e)
         {
-            // Cria e mostra o formulário de definições
             var formDefinicoes = new DefinicoesUser(_userId);
             formDefinicoes.ShowDialog();
         }
