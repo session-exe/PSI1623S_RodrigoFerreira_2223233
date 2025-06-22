@@ -14,6 +14,11 @@ namespace OfiPecas
             InitializeComponent();
             _userId = userId;
             _isAdmin = isAdmin;
+
+            // --- CORREÇÃO DE SEGURANÇA 1 ---
+            // O botão de administração só fica visível para administradores.
+            ImageButton_Admin.Visible = _isAdmin;
+
             this.Load += Loja_Load;
         }
 
@@ -80,7 +85,6 @@ namespace OfiPecas
         {
             if (sender is ProdutoCard card)
             {
-                // **CHAMADA CORRIGIDA**
                 var (success, message) = CartService.AdicionarAoCarrinho(_userId, card.PecaId);
                 MessageBox.Show(message, success ? "Sucesso" : "Erro", MessageBoxButtons.OK, success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
             }
@@ -105,6 +109,7 @@ namespace OfiPecas
             flowLayoutPanel_Sidebar.Visible = !flowLayoutPanel_Sidebar.Visible;
         }
 
+        // A tua funcionalidade de voltar ao Login está preservada
         private void PictureBox_Logo_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -124,10 +129,15 @@ namespace OfiPecas
             formDefinicoes.ShowDialog();
         }
 
-        //TODO:
-        private void ImageButton_Admin_Click(object sender, EventArgs e) { /* ... */ }
+        private void ImageButton_Admin_Click(object sender, EventArgs e)
+        {
+            // --- CORREÇÃO DE SEGURANÇA 2 ---
+            // Passamos a permissão de admin para o construtor do painel.
+            var formAdmin = new PainelAdmin(_isAdmin);
+            formAdmin.ShowDialog();
 
-
-
+            // Atualiza a loja quando o painel de admin for fechado.
+            Loja_Load(this, EventArgs.Empty);
+        }
     }
 }
