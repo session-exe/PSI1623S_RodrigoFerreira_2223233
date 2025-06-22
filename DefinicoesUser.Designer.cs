@@ -115,7 +115,7 @@
             GroupBox_Pagamento.FillColor = Color.FromArgb(40, 40, 40);
             GroupBox_Pagamento.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             GroupBox_Pagamento.ForeColor = Color.White;
-            GroupBox_Pagamento.Location = new Point(72, 12);
+            GroupBox_Pagamento.Location = new Point(45, 12);
             GroupBox_Pagamento.Name = "GroupBox_Pagamento";
             GroupBox_Pagamento.ShadowDecoration.CustomizableEdges = customizableEdges16;
             GroupBox_Pagamento.Size = new Size(275, 414);
@@ -213,6 +213,7 @@
             Button_GuardarDados.Size = new Size(210, 30);
             Button_GuardarDados.TabIndex = 31;
             Button_GuardarDados.Text = "GuardarDados";
+            Button_GuardarDados.Click += Button_GuardarDados_Click;
             // 
             // label1
             // 
@@ -380,7 +381,7 @@
             guna2GroupBox1.FillColor = Color.FromArgb(40, 40, 40);
             guna2GroupBox1.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             guna2GroupBox1.ForeColor = Color.White;
-            guna2GroupBox1.Location = new Point(367, 12);
+            guna2GroupBox1.Location = new Point(345, 12);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2GroupBox1.Size = new Size(275, 323);
@@ -404,6 +405,7 @@
             Button_AlterarPassword.Size = new Size(210, 30);
             Button_AlterarPassword.TabIndex = 31;
             Button_AlterarPassword.Text = "Alterar Password";
+            Button_AlterarPassword.Click += Button_AlterarPassword_Click;
             // 
             // label9
             // 
@@ -530,7 +532,7 @@
             guna2GroupBox2.FillColor = Color.FromArgb(40, 40, 40);
             guna2GroupBox2.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             guna2GroupBox2.ForeColor = Color.White;
-            guna2GroupBox2.Location = new Point(673, 12);
+            guna2GroupBox2.Location = new Point(645, 12);
             guna2GroupBox2.Name = "guna2GroupBox2";
             guna2GroupBox2.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2GroupBox2.Size = new Size(275, 323);
@@ -554,6 +556,7 @@
             Button_ApagarConta.Size = new Size(210, 30);
             Button_ApagarConta.TabIndex = 31;
             Button_ApagarConta.Text = "Apagar Conta";
+            Button_ApagarConta.Click += Button_ApagarConta_Click;
             // 
             // label8
             // 
