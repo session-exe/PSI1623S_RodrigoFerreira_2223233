@@ -1,5 +1,4 @@
-﻿// Os 'using' foram simplificados para o essencial
-using PdfSharp.Drawing;
+﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -28,12 +27,12 @@ namespace OfiPecas
                     PdfPage page = document.AddPage();
                     XGraphics gfx = XGraphics.FromPdfPage(page);
 
-                    // --- Fontes Simplificadas (sem estilo) para evitar erros ---
-                    XFont fontTitulo = new XFont("Verdana", 20);
-                    XFont fontNormal = new XFont("Verdana", 10);
-                    XFont fontTabelaHeader = new XFont("Verdana", 10);
+                    // Fontes definidas da forma mais simples possível
+                    XFont fontTitulo = new XFont("Arial", 20);
+                    XFont fontNormal = new XFont("Arial", 10);
+                    XFont fontTabelaHeader = new XFont("Arial", 10);
 
-                    int y = 40; // Posição vertical
+                    int y = 40; // Posição vertical inicial
 
                     // Cabeçalho
                     gfx.DrawString("Fatura OfiPecas", fontTitulo, XBrushes.Black, new XRect(0, y, page.Width, 0), XStringFormats.TopCenter);
@@ -45,7 +44,7 @@ namespace OfiPecas
                     gfx.DrawString($"Estado: {encomenda.Estado}", fontNormal, XBrushes.Black, 40, y);
                     y += 40;
 
-                    // Tabela de Itens (Header)
+                    // Tabela de Itens (Cabeçalho)
                     gfx.DrawString("Produto", fontTabelaHeader, XBrushes.Black, 40, y);
                     gfx.DrawString("Qtd.", fontTabelaHeader, XBrushes.Black, 350, y);
                     gfx.DrawString("Preço Unit.", fontTabelaHeader, XBrushes.Black, 400, y);
