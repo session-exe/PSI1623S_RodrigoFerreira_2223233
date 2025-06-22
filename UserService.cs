@@ -104,7 +104,7 @@ namespace OfiPecas
                     return (false, "Password incorreta. A conta não foi apagada.");
                 }
 
-                conn.Close(); // Fecha a conexão para começar uma nova com transação
+                conn.Close();
                 conn.Open();
 
                 using (var transaction = conn.BeginTransaction())
