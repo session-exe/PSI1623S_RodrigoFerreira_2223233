@@ -119,7 +119,10 @@ namespace OfiPecas
         }
 
         //TODO:
-        private void ImageButton_Admin_Click(object sender, EventArgs e) { /* ... */ }
+        private void ImageButton_Admin_Click(object sender, EventArgs e) 
+        { 
+            
+        }
         private void ImageButton_Settings_Click(object sender, EventArgs e) { /* ... */ }
 
 
