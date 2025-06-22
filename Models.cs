@@ -8,6 +8,7 @@ namespace OfiPecas
     public class UserInfo
     {
         public string Username { get; set; }
+        public string RecoveryKey { get; set; } 
         public string Email { get; set; }
         public string NomeEmpresa { get; set; }
         public string Endereco { get; set; }

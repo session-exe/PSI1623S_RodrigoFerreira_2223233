@@ -118,16 +118,16 @@ namespace OfiPecas
             formHistorico.ShowDialog();
         }
 
+        private void ImageButton_Settings_Click(object sender, EventArgs e)
+        {
+            //// Cria e mostra o formulário de definições
+            //var formDefinicoes = new DefinicoesUser(_userId);
+            //formDefinicoes.ShowDialog();
+        }
+
         //TODO:
         private void ImageButton_Admin_Click(object sender, EventArgs e) { /* ... */ }
 
-        private void ImageButton_Settings_Click(object sender, EventArgs e) 
-        { 
-        
-        
-        
-        
-        }
 
 
     }

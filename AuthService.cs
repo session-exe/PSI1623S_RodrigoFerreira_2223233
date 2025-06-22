@@ -204,7 +204,7 @@ namespace OfiPecas
 
 
         // Valida formato de email
-        private static bool IsValidEmail(string email)
+        internal static bool IsValidEmail(string email)
         {
             try
             {
@@ -219,7 +219,7 @@ namespace OfiPecas
 
 
         // Valida formato de telefone
-        private static bool IsValidPhone(string phone)
+        internal static bool IsValidPhone(string phone)
         {
             var digitsOnly = Regex.Replace(phone, "\\D", "");
             return digitsOnly.Length >= 9 && digitsOnly.Length <= 15;
@@ -227,7 +227,7 @@ namespace OfiPecas
 
 
         // Gera hash da senha com salt e 100k iterações
-        private static string HashPassword(string plain)
+        internal static string HashPassword(string plain)
         {
             byte[] salt = new byte[16];
             using var rng = RandomNumberGenerator.Create();
