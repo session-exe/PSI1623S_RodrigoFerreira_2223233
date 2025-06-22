@@ -112,9 +112,16 @@ namespace OfiPecas
             this.Close();
         }
 
+        private void ImageButton_HistoricoEcomendas_Click(object sender, EventArgs e)
+        {
+            var formHistorico = new HistoricoEncomendas(_userId);
+            formHistorico.ShowDialog();
+        }
+
+        //TODO:
         private void ImageButton_Admin_Click(object sender, EventArgs e) { /* ... */ }
         private void ImageButton_Settings_Click(object sender, EventArgs e) { /* ... */ }
-        private void ImageButton_HistoricoEcomendas_Click(object sender, EventArgs e) { /* ... */ }
+
 
     }
 }
