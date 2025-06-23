@@ -1,4 +1,4 @@
--- 1) Criar o banco de dados 
+-- 1) Criar o base de dados 
 IF DB_ID('OfiPecas') IS NULL
     CREATE DATABASE OfiPecas;
 GO

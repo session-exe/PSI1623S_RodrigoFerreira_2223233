@@ -73,6 +73,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PainelAdmin));
             TabControl_Admin = new Guna.UI2.WinForms.Guna2TabControl();
             tabPage_GestaoPecas = new TabPage();
             GroupBox_Peças = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -777,6 +778,7 @@
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(1119, 561);
             Controls.Add(TabControl_Admin);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PainelAdmin";
             Text = "PainelAdmin";
             TabControl_Admin.ResumeLayout(false);
