@@ -45,9 +45,10 @@
             // 
             // flowPanel_Produtos
             // 
-            flowPanel_Produtos.Location = new Point(141, 49);
+            flowPanel_Produtos.Location = new Point(161, 65);
+            flowPanel_Produtos.Margin = new Padding(3, 4, 3, 4);
             flowPanel_Produtos.Name = "flowPanel_Produtos";
-            flowPanel_Produtos.Size = new Size(520, 500);
+            flowPanel_Produtos.Size = new Size(594, 667);
             flowPanel_Produtos.TabIndex = 0;
             // 
             // Panel_Comprar
@@ -59,10 +60,11 @@
             Panel_Comprar.Controls.Add(Button_Comprar);
             Panel_Comprar.CustomizableEdges = customizableEdges3;
             Panel_Comprar.FillColor = Color.FromArgb(45, 45, 45);
-            Panel_Comprar.Location = new Point(707, 49);
+            Panel_Comprar.Location = new Point(808, 65);
+            Panel_Comprar.Margin = new Padding(3, 4, 3, 4);
             Panel_Comprar.Name = "Panel_Comprar";
             Panel_Comprar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            Panel_Comprar.Size = new Size(339, 276);
+            Panel_Comprar.Size = new Size(387, 368);
             Panel_Comprar.TabIndex = 1;
             // 
             // lbl_Total
@@ -70,9 +72,10 @@
             lbl_Total.BackColor = Color.Transparent;
             lbl_Total.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             lbl_Total.ForeColor = Color.White;
-            lbl_Total.Location = new Point(24, 100);
+            lbl_Total.Location = new Point(27, 133);
+            lbl_Total.Margin = new Padding(3, 4, 3, 4);
             lbl_Total.Name = "lbl_Total";
-            lbl_Total.Size = new Size(41, 22);
+            lbl_Total.Size = new Size(49, 27);
             lbl_Total.TabIndex = 2;
             lbl_Total.Text = "Total: ";
             // 
@@ -81,9 +84,10 @@
             lbl_Total_Produtos.BackColor = Color.Transparent;
             lbl_Total_Produtos.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             lbl_Total_Produtos.ForeColor = Color.White;
-            lbl_Total_Produtos.Location = new Point(24, 54);
+            lbl_Total_Produtos.Location = new Point(27, 72);
+            lbl_Total_Produtos.Margin = new Padding(3, 4, 3, 4);
             lbl_Total_Produtos.Name = "lbl_Total_Produtos";
-            lbl_Total_Produtos.Size = new Size(128, 22);
+            lbl_Total_Produtos.Size = new Size(157, 27);
             lbl_Total_Produtos.TabIndex = 1;
             lbl_Total_Produtos.Text = "Total de Produtos: ";
             // 
@@ -99,10 +103,11 @@
             Button_Comprar.FillColor = Color.FromArgb(150, 30, 144, 255);
             Button_Comprar.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_Comprar.ForeColor = Color.White;
-            Button_Comprar.Location = new Point(77, 204);
+            Button_Comprar.Location = new Point(88, 272);
+            Button_Comprar.Margin = new Padding(3, 4, 3, 4);
             Button_Comprar.Name = "Button_Comprar";
             Button_Comprar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Button_Comprar.Size = new Size(180, 45);
+            Button_Comprar.Size = new Size(206, 60);
             Button_Comprar.TabIndex = 0;
             Button_Comprar.Text = "Comprar";
             Button_Comprar.Click += Button_Comprar_Click;
@@ -115,24 +120,28 @@
             ImageButton_Back.ImageOffset = new Point(0, 0);
             ImageButton_Back.ImageRotate = 0F;
             ImageButton_Back.ImageSize = new Size(30, 30);
-            ImageButton_Back.Location = new Point(12, 12);
+            ImageButton_Back.Location = new Point(14, 16);
+            ImageButton_Back.Margin = new Padding(3, 4, 3, 4);
             ImageButton_Back.Name = "ImageButton_Back";
             ImageButton_Back.PressedState.ImageSize = new Size(27, 27);
             ImageButton_Back.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            ImageButton_Back.Size = new Size(35, 35);
+            ImageButton_Back.Size = new Size(40, 47);
             ImageButton_Back.TabIndex = 2;
             ImageButton_Back.Click += ImageButton_Back_Click;
             // 
             // Carrinho
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1084, 561);
+            ClientSize = new Size(1239, 748);
             Controls.Add(ImageButton_Back);
             Controls.Add(Panel_Comprar);
             Controls.Add(flowPanel_Produtos);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
+            MaximumSize = new Size(1257, 795);
+            MinimumSize = new Size(1257, 795);
             Name = "Carrinho";
             Text = "OfiPeças";
             Panel_Comprar.ResumeLayout(false);

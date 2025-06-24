@@ -71,7 +71,7 @@
             btnBaixarFatura.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnBaixarFatura.ForeColor = Color.White;
             btnBaixarFatura.Image = Properties.Resources.icon_download_pdf;
-            btnBaixarFatura.Location = new Point(258, 91);
+            btnBaixarFatura.Location = new Point(281, 93);
             btnBaixarFatura.Margin = new Padding(3, 4, 3, 4);
             btnBaixarFatura.Name = "btnBaixarFatura";
             btnBaixarFatura.ShadowDecoration.CustomizableEdges = customizableEdges2;

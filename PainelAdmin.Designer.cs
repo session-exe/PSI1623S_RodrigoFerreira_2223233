@@ -130,7 +130,7 @@
             TabControl_Admin.Location = new Point(0, 0);
             TabControl_Admin.Name = "TabControl_Admin";
             TabControl_Admin.SelectedIndex = 0;
-            TabControl_Admin.Size = new Size(1119, 561);
+            TabControl_Admin.Size = new Size(1121, 567);
             TabControl_Admin.TabButtonHoverState.BorderColor = Color.Empty;
             TabControl_Admin.TabButtonHoverState.FillColor = Color.FromArgb(40, 52, 70);
             TabControl_Admin.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
@@ -158,7 +158,7 @@
             tabPage_GestaoPecas.Location = new Point(184, 4);
             tabPage_GestaoPecas.Name = "tabPage_GestaoPecas";
             tabPage_GestaoPecas.Padding = new Padding(3);
-            tabPage_GestaoPecas.Size = new Size(931, 553);
+            tabPage_GestaoPecas.Size = new Size(933, 559);
             tabPage_GestaoPecas.TabIndex = 0;
             tabPage_GestaoPecas.Text = "Gestão de Peças";
             // 
@@ -186,7 +186,7 @@
             GroupBox_Peças.FillColor = Color.FromArgb(40, 40, 40);
             GroupBox_Peças.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             GroupBox_Peças.ForeColor = Color.White;
-            GroupBox_Peças.Location = new Point(575, 8);
+            GroupBox_Peças.Location = new Point(589, 8);
             GroupBox_Peças.Name = "GroupBox_Peças";
             GroupBox_Peças.ShadowDecoration.CustomizableEdges = customizableEdges20;
             GroupBox_Peças.Size = new Size(330, 526);
@@ -330,6 +330,7 @@
             NumericUpDown_PecaEstoque.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NumericUpDown_PecaEstoque.ForeColor = Color.White;
             NumericUpDown_PecaEstoque.Location = new Point(24, 166);
+            NumericUpDown_PecaEstoque.Margin = new Padding(3, 4, 3, 4);
             NumericUpDown_PecaEstoque.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             NumericUpDown_PecaEstoque.Name = "NumericUpDown_PecaEstoque";
             NumericUpDown_PecaEstoque.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -349,6 +350,7 @@
             NumericUpDown_PecaPreco.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             NumericUpDown_PecaPreco.ForeColor = Color.White;
             NumericUpDown_PecaPreco.Location = new Point(24, 114);
+            NumericUpDown_PecaPreco.Margin = new Padding(3, 4, 3, 4);
             NumericUpDown_PecaPreco.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             NumericUpDown_PecaPreco.Name = "NumericUpDown_PecaPreco";
             NumericUpDown_PecaPreco.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -426,7 +428,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DataGridView_Pecas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DataGridView_Pecas.ColumnHeadersHeight = 4;
+            DataGridView_Pecas.ColumnHeadersHeight = 25;
             DataGridView_Pecas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -437,10 +439,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             DataGridView_Pecas.DefaultCellStyle = dataGridViewCellStyle3;
             DataGridView_Pecas.GridColor = Color.FromArgb(231, 229, 255);
-            DataGridView_Pecas.Location = new Point(6, 8);
+            DataGridView_Pecas.Location = new Point(16, 8);
             DataGridView_Pecas.Name = "DataGridView_Pecas";
             DataGridView_Pecas.RowHeadersVisible = false;
-            DataGridView_Pecas.Size = new Size(536, 273);
+            DataGridView_Pecas.RowHeadersWidth = 51;
+            DataGridView_Pecas.Size = new Size(556, 273);
             DataGridView_Pecas.TabIndex = 0;
             DataGridView_Pecas.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             DataGridView_Pecas.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -454,7 +457,7 @@
             DataGridView_Pecas.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             DataGridView_Pecas.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             DataGridView_Pecas.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DataGridView_Pecas.ThemeStyle.HeaderStyle.Height = 4;
+            DataGridView_Pecas.ThemeStyle.HeaderStyle.Height = 25;
             DataGridView_Pecas.ThemeStyle.ReadOnly = false;
             DataGridView_Pecas.ThemeStyle.RowsStyle.BackColor = Color.White;
             DataGridView_Pecas.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -472,7 +475,7 @@
             tabPage_GestaoCateg.Location = new Point(184, 4);
             tabPage_GestaoCateg.Name = "tabPage_GestaoCateg";
             tabPage_GestaoCateg.Padding = new Padding(3);
-            tabPage_GestaoCateg.Size = new Size(931, 553);
+            tabPage_GestaoCateg.Size = new Size(933, 559);
             tabPage_GestaoCateg.TabIndex = 1;
             tabPage_GestaoCateg.Text = "Gestão de Categorias";
             // 
@@ -640,7 +643,7 @@
             tabPage_GestaoUsers.Location = new Point(184, 4);
             tabPage_GestaoUsers.Name = "tabPage_GestaoUsers";
             tabPage_GestaoUsers.Padding = new Padding(3);
-            tabPage_GestaoUsers.Size = new Size(931, 553);
+            tabPage_GestaoUsers.Size = new Size(933, 559);
             tabPage_GestaoUsers.TabIndex = 2;
             tabPage_GestaoUsers.Text = "Gestão de Utilizadores";
             // 
@@ -655,10 +658,10 @@
             Button_RemoverAdmin.FillColor = Color.Red;
             Button_RemoverAdmin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_RemoverAdmin.ForeColor = Color.White;
-            Button_RemoverAdmin.Location = new Point(728, 63);
+            Button_RemoverAdmin.Location = new Point(714, 63);
             Button_RemoverAdmin.Name = "Button_RemoverAdmin";
             Button_RemoverAdmin.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            Button_RemoverAdmin.Size = new Size(148, 37);
+            Button_RemoverAdmin.Size = new Size(163, 37);
             Button_RemoverAdmin.TabIndex = 43;
             Button_RemoverAdmin.Text = "Remover Admin";
             Button_RemoverAdmin.Click += Button_RemoverAdmin_Click;
@@ -674,7 +677,7 @@
             Button_TornarAdmin.FillColor = Color.DodgerBlue;
             Button_TornarAdmin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_TornarAdmin.ForeColor = Color.White;
-            Button_TornarAdmin.Location = new Point(574, 63);
+            Button_TornarAdmin.Location = new Point(550, 63);
             Button_TornarAdmin.Name = "Button_TornarAdmin";
             Button_TornarAdmin.ShadowDecoration.CustomizableEdges = customizableEdges36;
             Button_TornarAdmin.Size = new Size(148, 37);
@@ -712,6 +715,7 @@
             TextBox_PesquisarUser.ForeColor = Color.Black;
             TextBox_PesquisarUser.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_PesquisarUser.Location = new Point(53, 63);
+            TextBox_PesquisarUser.Margin = new Padding(3, 4, 3, 4);
             TextBox_PesquisarUser.Name = "TextBox_PesquisarUser";
             TextBox_PesquisarUser.PlaceholderText = "Pesquisar..";
             TextBox_PesquisarUser.SelectedText = "";
@@ -732,7 +736,7 @@
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             DataGridView_Utilizadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            DataGridView_Utilizadores.ColumnHeadersHeight = 4;
+            DataGridView_Utilizadores.ColumnHeadersHeight = 25;
             DataGridView_Utilizadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
@@ -746,6 +750,7 @@
             DataGridView_Utilizadores.Location = new Point(53, 112);
             DataGridView_Utilizadores.Name = "DataGridView_Utilizadores";
             DataGridView_Utilizadores.RowHeadersVisible = false;
+            DataGridView_Utilizadores.RowHeadersWidth = 51;
             DataGridView_Utilizadores.Size = new Size(823, 274);
             DataGridView_Utilizadores.TabIndex = 0;
             DataGridView_Utilizadores.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -760,7 +765,7 @@
             DataGridView_Utilizadores.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             DataGridView_Utilizadores.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             DataGridView_Utilizadores.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DataGridView_Utilizadores.ThemeStyle.HeaderStyle.Height = 4;
+            DataGridView_Utilizadores.ThemeStyle.HeaderStyle.Height = 25;
             DataGridView_Utilizadores.ThemeStyle.ReadOnly = false;
             DataGridView_Utilizadores.ThemeStyle.RowsStyle.BackColor = Color.White;
             DataGridView_Utilizadores.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -776,9 +781,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1119, 561);
+            ClientSize = new Size(1121, 567);
             Controls.Add(TabControl_Admin);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(1137, 606);
+            MinimumSize = new Size(1137, 606);
             Name = "PainelAdmin";
             Text = "PainelAdmin";
             TabControl_Admin.ResumeLayout(false);

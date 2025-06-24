@@ -79,10 +79,11 @@
             GroupBox_Pagamento.FillColor = Color.FromArgb(40, 40, 40);
             GroupBox_Pagamento.Font = new Font("Open Sans SemiBold", 15.25F, FontStyle.Bold);
             GroupBox_Pagamento.ForeColor = Color.White;
-            GroupBox_Pagamento.Location = new Point(55, 36);
+            GroupBox_Pagamento.Location = new Point(63, 48);
+            GroupBox_Pagamento.Margin = new Padding(3, 4, 3, 4);
             GroupBox_Pagamento.Name = "GroupBox_Pagamento";
             GroupBox_Pagamento.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            GroupBox_Pagamento.Size = new Size(275, 371);
+            GroupBox_Pagamento.Size = new Size(314, 495);
             GroupBox_Pagamento.TabIndex = 0;
             GroupBox_Pagamento.Text = "Pagamento ";
             // 
@@ -97,10 +98,11 @@
             Button_Pagar.FillColor = Color.DodgerBlue;
             Button_Pagar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_Pagar.ForeColor = Color.White;
-            Button_Pagar.Location = new Point(34, 312);
+            Button_Pagar.Location = new Point(39, 416);
+            Button_Pagar.Margin = new Padding(3, 4, 3, 4);
             Button_Pagar.Name = "Button_Pagar";
             Button_Pagar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Button_Pagar.Size = new Size(210, 30);
+            Button_Pagar.Size = new Size(240, 40);
             Button_Pagar.TabIndex = 31;
             Button_Pagar.Text = "Confirmar Pagamento";
             Button_Pagar.Click += Button_Pagar_Click;
@@ -110,10 +112,10 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.DodgerBlue;
-            label6.Location = new Point(44, 237);
+            label6.Location = new Point(50, 316);
             label6.Name = "label6";
             label6.Padding = new Padding(1, 0, 1, 0);
-            label6.Size = new Size(110, 17);
+            label6.Size = new Size(142, 23);
             label6.TabIndex = 30;
             label6.Text = "Data de Validade";
             // 
@@ -122,10 +124,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DodgerBlue;
-            label1.Location = new Point(44, 150);
+            label1.Location = new Point(50, 200);
             label1.Name = "label1";
             label1.Padding = new Padding(1, 0, 1, 0);
-            label1.Size = new Size(121, 17);
+            label1.Size = new Size(156, 23);
             label1.TabIndex = 28;
             label1.Text = "Número do Cartão";
             // 
@@ -145,13 +147,13 @@
             TextBox_NrCartao.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_NrCartao.Font = new Font("Segoe UI", 9F);
             TextBox_NrCartao.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_NrCartao.Location = new Point(34, 159);
-            TextBox_NrCartao.Margin = new Padding(3, 4, 3, 4);
+            TextBox_NrCartao.Location = new Point(39, 212);
+            TextBox_NrCartao.Margin = new Padding(3, 5, 3, 5);
             TextBox_NrCartao.Name = "TextBox_NrCartao";
             TextBox_NrCartao.PlaceholderText = "";
             TextBox_NrCartao.SelectedText = "";
             TextBox_NrCartao.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TextBox_NrCartao.Size = new Size(210, 30);
+            TextBox_NrCartao.Size = new Size(240, 40);
             TextBox_NrCartao.TabIndex = 27;
             // 
             // label2
@@ -159,10 +161,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DodgerBlue;
-            label2.Location = new Point(44, 194);
+            label2.Location = new Point(50, 259);
             label2.Name = "label2";
             label2.Padding = new Padding(1, 0, 1, 0);
-            label2.Size = new Size(34, 17);
+            label2.Size = new Size(45, 23);
             label2.TabIndex = 26;
             label2.Text = "CVV";
             // 
@@ -182,13 +184,13 @@
             TextBox_CVV.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_CVV.Font = new Font("Segoe UI", 9F);
             TextBox_CVV.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_CVV.Location = new Point(34, 203);
-            TextBox_CVV.Margin = new Padding(3, 4, 3, 4);
+            TextBox_CVV.Location = new Point(39, 271);
+            TextBox_CVV.Margin = new Padding(3, 5, 3, 5);
             TextBox_CVV.Name = "TextBox_CVV";
             TextBox_CVV.PlaceholderText = "";
             TextBox_CVV.SelectedText = "";
             TextBox_CVV.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TextBox_CVV.Size = new Size(210, 30);
+            TextBox_CVV.Size = new Size(240, 40);
             TextBox_CVV.TabIndex = 25;
             // 
             // label3
@@ -196,10 +198,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DodgerBlue;
-            label3.Location = new Point(44, 58);
+            label3.Location = new Point(50, 77);
             label3.Name = "label3";
             label3.Padding = new Padding(1, 0, 1, 0);
-            label3.Size = new Size(106, 17);
+            label3.Size = new Size(137, 23);
             label3.TabIndex = 24;
             label3.Text = "Nome do Titular";
             // 
@@ -219,13 +221,13 @@
             TextBox_Nome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_Nome.Font = new Font("Segoe UI", 9F);
             TextBox_Nome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Nome.Location = new Point(34, 67);
-            TextBox_Nome.Margin = new Padding(3, 4, 3, 4);
+            TextBox_Nome.Location = new Point(39, 89);
+            TextBox_Nome.Margin = new Padding(3, 5, 3, 5);
             TextBox_Nome.Name = "TextBox_Nome";
             TextBox_Nome.PlaceholderText = "";
             TextBox_Nome.SelectedText = "";
             TextBox_Nome.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            TextBox_Nome.Size = new Size(210, 30);
+            TextBox_Nome.Size = new Size(240, 40);
             TextBox_Nome.TabIndex = 23;
             // 
             // label4
@@ -233,10 +235,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DodgerBlue;
-            label4.Location = new Point(44, 102);
+            label4.Location = new Point(50, 136);
             label4.Name = "label4";
             label4.Padding = new Padding(1, 0, 1, 0);
-            label4.Size = new Size(137, 17);
+            label4.Size = new Size(174, 23);
             label4.TabIndex = 22;
             label4.Text = "Morada de Faturação";
             // 
@@ -256,13 +258,13 @@
             TextBox_Morada.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_Morada.Font = new Font("Segoe UI", 9F);
             TextBox_Morada.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Morada.Location = new Point(34, 111);
-            TextBox_Morada.Margin = new Padding(3, 4, 3, 4);
+            TextBox_Morada.Location = new Point(39, 148);
+            TextBox_Morada.Margin = new Padding(3, 5, 3, 5);
             TextBox_Morada.Name = "TextBox_Morada";
             TextBox_Morada.PlaceholderText = "";
             TextBox_Morada.SelectedText = "";
             TextBox_Morada.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TextBox_Morada.Size = new Size(210, 30);
+            TextBox_Morada.Size = new Size(240, 40);
             TextBox_Morada.TabIndex = 21;
             // 
             // DateTimePicker_Card
@@ -276,22 +278,26 @@
             DateTimePicker_Card.FillColor = Color.FromArgb(2, 2, 2);
             DateTimePicker_Card.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             DateTimePicker_Card.Format = DateTimePickerFormat.Custom;
-            DateTimePicker_Card.Location = new Point(34, 250);
+            DateTimePicker_Card.Location = new Point(39, 333);
+            DateTimePicker_Card.Margin = new Padding(3, 4, 3, 4);
             DateTimePicker_Card.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
             DateTimePicker_Card.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             DateTimePicker_Card.Name = "DateTimePicker_Card";
             DateTimePicker_Card.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            DateTimePicker_Card.Size = new Size(154, 33);
+            DateTimePicker_Card.Size = new Size(176, 44);
             DateTimePicker_Card.TabIndex = 5;
             DateTimePicker_Card.Value = new DateTime(2025, 6, 21, 15, 46, 22, 0);
             // 
             // Pagamento
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(380, 456);
+            ClientSize = new Size(434, 608);
             Controls.Add(GroupBox_Pagamento);
+            Margin = new Padding(3, 4, 3, 4);
+            MaximumSize = new Size(452, 655);
+            MinimumSize = new Size(452, 655);
             Name = "Pagamento";
             Text = "Pagamento";
             GroupBox_Pagamento.ResumeLayout(false);

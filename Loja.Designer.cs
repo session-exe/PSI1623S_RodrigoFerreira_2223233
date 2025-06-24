@@ -249,6 +249,8 @@
             Controls.Add(Top_Panel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
+            MaximumSize = new Size(1257, 795);
+            MinimumSize = new Size(1257, 795);
             Name = "Loja";
             Text = "OfiPeças";
             Top_Panel.ResumeLayout(false);
