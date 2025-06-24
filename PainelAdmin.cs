@@ -83,15 +83,13 @@ namespace OfiPecas
                 NumericUpDown_PecaPreco.Value = peca.Preco;
                 NumericUpDown_PecaEstoque.Value = peca.Estoque;
 
-                // --- CORREÇÃO ROBUSTA AQUI ---
-                // Em vez de usar SelectedValue, encontramos o índice do item correspondente.
                 int categoriaIdParaSelecionar = peca.CategoriaId;
                 for (int i = 0; i < ComboBox_PecaCategoria.Items.Count; i++)
                 {
                     if (ComboBox_PecaCategoria.Items[i] is CategoriaInfo item && item.Id == categoriaIdParaSelecionar)
                     {
                         ComboBox_PecaCategoria.SelectedIndex = i;
-                        break; // Encontrámos, podemos parar o loop
+                        break; 
                     }
                 }
 
@@ -184,6 +182,8 @@ namespace OfiPecas
         private void Button_CategoriaNovo_Click(object sender, EventArgs e)
         {
             LimparFormularioCategoria();
+            LimparFormularioCategoria();
+
         }
 
         private void Button_CategoriaGuardar_Click(object sender, EventArgs e)
