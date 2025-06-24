@@ -30,22 +30,22 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            lblSubtotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            NumUpDwn_Quantidade = new Guna.UI2.WinForms.Guna2NumericUpDown();
             lblPreco = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             picProduto = new Guna.UI2.WinForms.Guna2PictureBox();
             btnRemover = new Guna.UI2.WinForms.Guna2Button();
-            NumUpDwn_Quantidade = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            lblSubtotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picProduto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NumUpDwn_Quantidade).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picProduto).BeginInit();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -63,19 +63,53 @@
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.FillColor = Color.FromArgb(40, 40, 40);
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel1.Size = new Size(500, 120);
+            guna2Panel1.Size = new Size(584, 160);
             guna2Panel1.TabIndex = 0;
+            // 
+            // lblSubtotal
+            // 
+            lblSubtotal.BackColor = Color.FromArgb(40, 40, 40);
+            lblSubtotal.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSubtotal.ForeColor = Color.White;
+            lblSubtotal.Location = new Point(408, 53);
+            lblSubtotal.Margin = new Padding(3, 4, 3, 4);
+            lblSubtotal.Name = "lblSubtotal";
+            lblSubtotal.Size = new Size(47, 27);
+            lblSubtotal.TabIndex = 9;
+            lblSubtotal.Text = "€€€€";
+            // 
+            // NumUpDwn_Quantidade
+            // 
+            NumUpDwn_Quantidade.BackColor = Color.Transparent;
+            NumUpDwn_Quantidade.BorderColor = Color.DodgerBlue;
+            NumUpDwn_Quantidade.BorderRadius = 5;
+            NumUpDwn_Quantidade.CustomizableEdges = customizableEdges1;
+            NumUpDwn_Quantidade.FillColor = Color.FromArgb(40, 40, 40);
+            NumUpDwn_Quantidade.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NumUpDwn_Quantidade.ForeColor = Color.White;
+            NumUpDwn_Quantidade.Location = new Point(218, 103);
+            NumUpDwn_Quantidade.Margin = new Padding(3, 5, 3, 5);
+            NumUpDwn_Quantidade.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
+            NumUpDwn_Quantidade.Name = "NumUpDwn_Quantidade";
+            NumUpDwn_Quantidade.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            NumUpDwn_Quantidade.Size = new Size(82, 40);
+            NumUpDwn_Quantidade.TabIndex = 8;
+            NumUpDwn_Quantidade.UpDownButtonFillColor = Color.FromArgb(40, 40, 40);
+            NumUpDwn_Quantidade.UpDownButtonForeColor = Color.DodgerBlue;
+            NumUpDwn_Quantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // lblPreco
             // 
             lblPreco.BackColor = Color.FromArgb(40, 40, 40);
             lblPreco.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPreco.ForeColor = Color.White;
-            lblPreco.Location = new Point(191, 40);
+            lblPreco.Location = new Point(218, 53);
+            lblPreco.Margin = new Padding(3, 4, 3, 4);
             lblPreco.Name = "lblPreco";
-            lblPreco.Size = new Size(35, 22);
+            lblPreco.Size = new Size(47, 27);
             lblPreco.TabIndex = 7;
             lblPreco.Text = "€€€€";
             // 
@@ -84,9 +118,10 @@
             lblNome.BackColor = Color.FromArgb(40, 40, 40);
             lblNome.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNome.ForeColor = Color.White;
-            lblNome.Location = new Point(191, 12);
+            lblNome.Location = new Point(218, 16);
+            lblNome.Margin = new Padding(3, 4, 3, 4);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(61, 22);
+            lblNome.Size = new Size(76, 27);
             lblNome.TabIndex = 6;
             lblNome.Text = "Nomeee";
             // 
@@ -95,10 +130,11 @@
             picProduto.BorderRadius = 6;
             picProduto.CustomizableEdges = customizableEdges3;
             picProduto.ImageRotate = 0F;
-            picProduto.Location = new Point(14, 12);
+            picProduto.Location = new Point(16, 16);
+            picProduto.Margin = new Padding(3, 4, 3, 4);
             picProduto.Name = "picProduto";
             picProduto.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            picProduto.Size = new Size(152, 95);
+            picProduto.Size = new Size(174, 127);
             picProduto.TabIndex = 5;
             picProduto.TabStop = false;
             // 
@@ -116,56 +152,28 @@
             btnRemover.ForeColor = Color.White;
             btnRemover.Image = Properties.Resources.icon_shopping_cart;
             btnRemover.ImageAlign = HorizontalAlignment.Right;
-            btnRemover.Location = new Point(372, 77);
+            btnRemover.Location = new Point(434, 103);
+            btnRemover.Margin = new Padding(3, 4, 3, 4);
             btnRemover.Name = "btnRemover";
             btnRemover.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnRemover.Size = new Size(110, 30);
+            btnRemover.Size = new Size(126, 40);
             btnRemover.TabIndex = 4;
             btnRemover.Text = "Remover";
             btnRemover.TextAlign = HorizontalAlignment.Left;
             // 
-            // NumUpDwn_Quantidade
-            // 
-            NumUpDwn_Quantidade.BackColor = Color.Transparent;
-            NumUpDwn_Quantidade.BorderColor = Color.DodgerBlue;
-            NumUpDwn_Quantidade.BorderRadius = 5;
-            NumUpDwn_Quantidade.CustomizableEdges = customizableEdges1;
-            NumUpDwn_Quantidade.FillColor = Color.FromArgb(40, 40, 40);
-            NumUpDwn_Quantidade.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NumUpDwn_Quantidade.ForeColor = Color.White;
-            NumUpDwn_Quantidade.Location = new Point(191, 77);
-            NumUpDwn_Quantidade.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
-            NumUpDwn_Quantidade.Name = "NumUpDwn_Quantidade";
-            NumUpDwn_Quantidade.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            NumUpDwn_Quantidade.Size = new Size(72, 30);
-            NumUpDwn_Quantidade.TabIndex = 8;
-            NumUpDwn_Quantidade.UpDownButtonFillColor = Color.FromArgb(40, 40, 40);
-            NumUpDwn_Quantidade.UpDownButtonForeColor = Color.DodgerBlue;
-            NumUpDwn_Quantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // lblSubtotal
-            // 
-            lblSubtotal.BackColor = Color.FromArgb(40, 40, 40);
-            lblSubtotal.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSubtotal.ForeColor = Color.White;
-            lblSubtotal.Location = new Point(357, 40);
-            lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(35, 22);
-            lblSubtotal.TabIndex = 9;
-            lblSubtotal.Text = "€€€€";
-            // 
             // ItemCarrinho
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(guna2Panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ItemCarrinho";
-            Size = new Size(500, 120);
+            Size = new Size(584, 160);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picProduto).EndInit();
             ((System.ComponentModel.ISupportInitialize)NumUpDwn_Quantidade).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picProduto).EndInit();
             ResumeLayout(false);
         }
 

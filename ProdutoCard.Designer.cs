@@ -49,21 +49,24 @@
             picProduto.BorderRadius = 6;
             picProduto.CustomizableEdges = customizableEdges1;
             picProduto.ImageRotate = 0F;
-            picProduto.Location = new Point(12, 12);
+            picProduto.Location = new Point(14, 16);
+            picProduto.Margin = new Padding(3, 4, 3, 4);
             picProduto.Name = "picProduto";
             picProduto.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            picProduto.Size = new Size(236, 161);
+            picProduto.Size = new Size(270, 215);
             picProduto.TabIndex = 0;
             picProduto.TabStop = false;
             // 
             // lblNome
             // 
+            lblNome.AutoSize = false;
             lblNome.BackColor = Color.FromArgb(40, 40, 40);
             lblNome.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNome.ForeColor = Color.White;
-            lblNome.Location = new Point(11, 181);
+            lblNome.Location = new Point(13, 241);
+            lblNome.Margin = new Padding(3, 4, 3, 4);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(61, 22);
+            lblNome.Size = new Size(172, 48);
             lblNome.TabIndex = 1;
             lblNome.Text = "Nomeee";
             // 
@@ -72,9 +75,10 @@
             lblPreco.BackColor = Color.FromArgb(40, 40, 40);
             lblPreco.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPreco.ForeColor = Color.White;
-            lblPreco.Location = new Point(184, 181);
+            lblPreco.Location = new Point(210, 241);
+            lblPreco.Margin = new Padding(3, 4, 3, 4);
             lblPreco.Name = "lblPreco";
-            lblPreco.Size = new Size(35, 22);
+            lblPreco.Size = new Size(47, 27);
             lblPreco.TabIndex = 2;
             lblPreco.Text = "€€€€";
             // 
@@ -92,10 +96,11 @@
             btnAdicionar.ForeColor = Color.White;
             btnAdicionar.Image = Properties.Resources.icon_shopping_cart;
             btnAdicionar.ImageAlign = HorizontalAlignment.Right;
-            btnAdicionar.Location = new Point(132, 215);
+            btnAdicionar.Location = new Point(153, 297);
+            btnAdicionar.Margin = new Padding(3, 4, 3, 4);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAdicionar.Size = new Size(115, 30);
+            btnAdicionar.Size = new Size(131, 40);
             btnAdicionar.TabIndex = 3;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.TextAlign = HorizontalAlignment.Left;
@@ -106,9 +111,10 @@
             lblStock.BackColor = Color.FromArgb(40, 40, 40);
             lblStock.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblStock.ForeColor = Color.White;
-            lblStock.Location = new Point(12, 223);
+            lblStock.Location = new Point(13, 310);
+            lblStock.Margin = new Padding(3, 4, 3, 4);
             lblStock.Name = "lblStock";
-            lblStock.Size = new Size(27, 22);
+            lblStock.Size = new Size(36, 27);
             lblStock.TabIndex = 5;
             lblStock.Text = "000";
             // 
@@ -119,28 +125,30 @@
             guna2Panel1.BorderRadius = 12;
             guna2Panel1.BorderThickness = 2;
             guna2Panel1.Controls.Add(picProduto);
+            guna2Panel1.Controls.Add(btnAdicionar);
             guna2Panel1.Controls.Add(lblStock);
             guna2Panel1.CustomizableEdges = customizableEdges5;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.FillColor = Color.FromArgb(40, 40, 40);
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel1.Size = new Size(260, 260);
+            guna2Panel1.Size = new Size(297, 356);
             guna2Panel1.TabIndex = 6;
             // 
             // ProdutoCard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(lblPreco);
-            Controls.Add(btnAdicionar);
             Controls.Add(lblNome);
             Controls.Add(guna2Panel1);
             ForeColor = SystemColors.ControlText;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ProdutoCard";
-            Size = new Size(260, 260);
+            Size = new Size(297, 356);
             ((System.ComponentModel.ISupportInitialize)picProduto).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();

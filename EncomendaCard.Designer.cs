@@ -54,9 +54,10 @@
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(350, 110);
+            guna2Panel1.Size = new Size(420, 147);
             guna2Panel1.TabIndex = 1;
             // 
             // btnBaixarFatura
@@ -70,10 +71,11 @@
             btnBaixarFatura.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnBaixarFatura.ForeColor = Color.White;
             btnBaixarFatura.Image = Properties.Resources.icon_download_pdf;
-            btnBaixarFatura.Location = new Point(226, 68);
+            btnBaixarFatura.Location = new Point(258, 91);
+            btnBaixarFatura.Margin = new Padding(3, 4, 3, 4);
             btnBaixarFatura.Name = "btnBaixarFatura";
             btnBaixarFatura.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnBaixarFatura.Size = new Size(107, 30);
+            btnBaixarFatura.Size = new Size(122, 40);
             btnBaixarFatura.TabIndex = 4;
             btnBaixarFatura.Text = "Export";
             // 
@@ -82,9 +84,10 @@
             lblValor.BackColor = Color.Transparent;
             lblValor.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             lblValor.ForeColor = Color.White;
-            lblValor.Location = new Point(14, 70);
+            lblValor.Location = new Point(16, 93);
+            lblValor.Margin = new Padding(3, 4, 3, 4);
             lblValor.Name = "lblValor";
-            lblValor.Size = new Size(38, 22);
+            lblValor.Size = new Size(46, 27);
             lblValor.TabIndex = 3;
             lblValor.Text = "valor";
             // 
@@ -93,9 +96,10 @@
             lblEstado.BackColor = Color.Transparent;
             lblEstado.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             lblEstado.ForeColor = Color.White;
-            lblEstado.Location = new Point(14, 42);
+            lblEstado.Location = new Point(16, 56);
+            lblEstado.Margin = new Padding(3, 4, 3, 4);
             lblEstado.Name = "lblEstado";
-            lblEstado.Size = new Size(48, 22);
+            lblEstado.Size = new Size(60, 27);
             lblEstado.TabIndex = 2;
             lblEstado.Text = "estado";
             // 
@@ -104,9 +108,10 @@
             lblData.BackColor = Color.Transparent;
             lblData.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             lblData.ForeColor = Color.White;
-            lblData.Location = new Point(214, 14);
+            lblData.Location = new Point(245, 19);
+            lblData.Margin = new Padding(3, 4, 3, 4);
             lblData.Name = "lblData";
-            lblData.Size = new Size(119, 22);
+            lblData.Size = new Size(158, 27);
             lblData.TabIndex = 1;
             lblData.Text = "Data: 23/09/2020";
             // 
@@ -115,20 +120,22 @@
             lblIdEncomenda.BackColor = Color.Transparent;
             lblIdEncomenda.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             lblIdEncomenda.ForeColor = Color.White;
-            lblIdEncomenda.Location = new Point(14, 14);
+            lblIdEncomenda.Location = new Point(16, 19);
+            lblIdEncomenda.Margin = new Padding(3, 4, 3, 4);
             lblIdEncomenda.Name = "lblIdEncomenda";
-            lblIdEncomenda.Size = new Size(96, 22);
+            lblIdEncomenda.Size = new Size(120, 27);
             lblIdEncomenda.TabIndex = 0;
             lblIdEncomenda.Text = "IdEncomenda";
             // 
             // EncomendaCard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(guna2Panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "EncomendaCard";
-            Size = new Size(350, 110);
+            Size = new Size(420, 147);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ResumeLayout(false);
