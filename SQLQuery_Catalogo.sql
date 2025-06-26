@@ -58,18 +58,6 @@ INSERT INTO dbo.PECA (nome, preco, estoque, id_categoria, imagem) VALUES
 ('Alternador Bosch', 230.00, 10, 5, @img);
 GO
 
-PRINT '5 categorias e 10 peças foram inseridas com sucesso!';
-SELECT * FROM dbo.CATEGORIA;
-SELECT * FROM dbo.PECA;
-GO
-
-
-
-
-
--- Garante que estás a usar a base de dados correta
-USE OfiPecas;
-GO
 
 -- Apaga o admin antigo, se existir, para evitar erros de username duplicado
 DELETE FROM dbo.UTILIZADOR WHERE username = 'adm';
@@ -82,7 +70,7 @@ VALUES
     (
         'adm',                                      -- username
         'admin@ofipeças.com',                       -- email de exemplo
-        'ADYoAEL+Qy9VMRKihA7O0g8jXqD9d2R8Bwz8b+r7R77E6A9dK8u4W0e8g6o5E4v3P+w=', -- O hash correspondente à password '123'
+        '1/1lB/ZGt7kfvqlx4EVSmM+QrcBlgcYHx8kO22ani6/AuRibRJKDXBJ/wMf/gLBC', -- O hash correspondente à password '123'
         'CHAVEADMIN123',                            -- chave de recuperação de exemplo
         1,                                          -- is_admin = true
         'Sede da Empresa',                          -- endereço de exemplo
@@ -90,7 +78,8 @@ VALUES
         '912345678'                                 -- telefone de exemplo
     );
 GO
-
-PRINT 'Utilizador "adm" com permissões de administrador criado com sucesso!';
+PRINT '5 categorias e 10 peças foram inseridas com sucesso!';
+SELECT * FROM dbo.CATEGORIA;
+SELECT * FROM dbo.PECA;
 SELECT * FROM dbo.UTILIZADOR WHERE username = 'adm';
 GO

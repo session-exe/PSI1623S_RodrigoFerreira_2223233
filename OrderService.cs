@@ -6,34 +6,35 @@ using System.Windows.Forms;
 
 namespace OfiPecas
 {
-    // Responsável por todas as operações de encomendas
+    // Responsável por todas as operações de encomendas.
     public static class OrderService
     {
-        // Finaliza a compra: cria uma encomenda e limpa o carrinho
+        // Finaliza a compra: cria uma encomenda, atualiza o stock e limpa o carrinho.
         public static (bool success, string message) FinalizarEncomenda(int userId)
         {
-            // Este método agora usa o CartService para obter os itens.
+            // Pede ao CartService a lista de itens no carrinho do utilizador.
             var itensCarrinho = CartService.GetItensDoCarrinho(userId);
             if (itensCarrinho.Count == 0)
             {
                 return (false, "O carrinho está vazio.");
             }
 
+            // Usa uma transação para garantir que todas as operações são executadas com sucesso, ou nenhuma é.
             using var conn = DatabaseConnection.GetConnection();
             using var transaction = conn.BeginTransaction();
             try
             {
-                // 1. Verificação de stock
+                // 1. Verificação de stock antes de qualquer alteração na BD.
                 foreach (var item in itensCarrinho)
                 {
                     if (item.Quantidade > item.Estoque)
                     {
-                        transaction.Rollback();
+                        transaction.Rollback(); // Cancela a transação.
                         return (false, $"Stock insuficiente para o produto: '{item.Nome}'. Disponível: {item.Estoque}, Pedido: {item.Quantidade}.");
                     }
                 }
 
-                // 2. Criação da encomenda
+                // 2. Criação do registo principal da encomenda.
                 decimal valorTotal = itensCarrinho.Sum(item => item.Subtotal);
                 string sqlEncomenda = "INSERT INTO dbo.ENCOMENDA (id_utilizador, valor_total, estado) VALUES (@UserId, @ValorTotal, 'Pendente'); SELECT SCOPE_IDENTITY();";
                 int novaEncomendaId;
@@ -44,11 +45,12 @@ namespace OfiPecas
                     novaEncomendaId = Convert.ToInt32(cmdEncomenda.ExecuteScalar());
                 }
 
-                // 3. Inserção dos itens da encomenda e atualização do stock
+                // 3. Inserção dos itens da encomenda e atualização do stock de cada peça.
                 string sqlItemEncomenda = "INSERT INTO dbo.ITEM_ENCOMENDA (id_encomenda, id_peca, quantidade, preco_unitario) VALUES (@EncomendaId, @PecaId, @Quantidade, @PrecoUnitario)";
                 string sqlAtualizaStock = "UPDATE dbo.PECA SET estoque = estoque - @Quantidade WHERE id_peca = @PecaId";
                 foreach (var item in itensCarrinho)
                 {
+                    // Insere o item na tabela de encomendas.
                     using (var cmdItem = new SqlCommand(sqlItemEncomenda, conn, transaction))
                     {
                         cmdItem.Parameters.AddWithValue("@EncomendaId", novaEncomendaId);
@@ -57,6 +59,7 @@ namespace OfiPecas
                         cmdItem.Parameters.AddWithValue("@PrecoUnitario", item.PrecoUnitario);
                         cmdItem.ExecuteNonQuery();
                     }
+                    // Abate a quantidade comprada ao stock da peça correspondente.
                     using (var cmdStock = new SqlCommand(sqlAtualizaStock, conn, transaction))
                     {
                         cmdStock.Parameters.AddWithValue("@Quantidade", item.Quantidade);
@@ -65,7 +68,7 @@ namespace OfiPecas
                     }
                 }
 
-                // 4. Limpeza do carrinho
+                // 4. Limpeza do carrinho do utilizador.
                 string sqlLimparCarrinho = "DELETE FROM dbo.ITEM_CARRINHO WHERE id_carrinho = (SELECT id_carrinho FROM dbo.CARRINHO WHERE id_utilizador = @UserId)";
                 using (var cmdLimpar = new SqlCommand(sqlLimparCarrinho, conn, transaction))
                 {
@@ -73,17 +76,17 @@ namespace OfiPecas
                     cmdLimpar.ExecuteNonQuery();
                 }
 
-                transaction.Commit();
+                transaction.Commit(); // Confirma todas as alterações na base de dados.
                 return (true, $"Encomenda nº {novaEncomendaId} criada com sucesso!");
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
+                transaction.Rollback(); // Se ocorrer um erro, desfaz todas as alterações.
                 return (false, $"Ocorreu um erro crítico ao finalizar a encomenda: {ex.Message}");
             }
         }
 
-        // Devolve a lista de todas as encomendas de um utilizador
+        // Devolve o histórico de todas as encomendas de um utilizador.
         public static List<EncomendaInfo> GetHistoricoEncomendas(int userId)
         {
             var encomendas = new List<EncomendaInfo>();
@@ -98,6 +101,7 @@ namespace OfiPecas
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    // Cria um objeto EncomendaInfo para cada registo e adiciona à lista.
                     encomendas.Add(new EncomendaInfo
                     {
                         Id = reader.GetInt32("id_encomenda"),
@@ -111,7 +115,7 @@ namespace OfiPecas
             return encomendas;
         }
 
-        // Devolve os itens detalhados de uma única encomenda
+        // Devolve os itens detalhados de uma única encomenda (para o PDF da fatura).
         public static List<ItemEncomendaInfo> GetDetalhesEncomenda(int encomendaId)
         {
             var itens = new List<ItemEncomendaInfo>();
@@ -141,7 +145,5 @@ namespace OfiPecas
             catch (Exception ex) { MessageBox.Show($"Erro ao buscar detalhes da encomenda: {ex.Message}"); }
             return itens;
         }
-
-
     }
 }

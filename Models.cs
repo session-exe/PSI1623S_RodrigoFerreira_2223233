@@ -25,7 +25,7 @@ namespace OfiPecas
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
         public int CategoriaId { get; set; }
-        public string NomeCategoria { get; set; } // <-- PROPRIEDADE ADICIONADA
+        public string NomeCategoria { get; set; } 
         public byte[] ImagemBytes { get; set; }
 
         public Image GetImagem()

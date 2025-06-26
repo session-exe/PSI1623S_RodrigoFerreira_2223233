@@ -6,17 +6,17 @@ using System.Windows.Forms;
 
 namespace OfiPecas
 {
-    // Responsável apenas pela gestão do catálogo de peças e categorias
+    // Serviço responsável pela gestão do catálogo de peças e categorias.
     public static class StoreService
     {
-        // Devolve todas as peças (agora com os dados da categoria)
+        // Devolve a lista completa de peças.
         public static List<Peca> GetPecas() { return PesquisarPecas(null); }
 
-        // Pesquisa peças por nome (agora com os dados da categoria)
+        // Pesquisa peças por nome. Se o termo for nulo, devolve todas as peças.
         public static List<Peca> PesquisarPecas(string searchTerm)
         {
             var pecas = new List<Peca>();
-            // --- QUERY CORRIGIDA COM JOIN PARA IR BUSCAR OS DADOS DA CATEGORIA ---
+            // Query SQL com JOIN para obter também o nome da categoria.
             string sql = @"
                 SELECT 
                     p.id_peca, p.nome, p.preco, p.estoque, p.id_categoria, p.imagem, 
@@ -36,6 +36,7 @@ namespace OfiPecas
                 if (!string.IsNullOrWhiteSpace(searchTerm)) { cmd.Parameters.AddWithValue("@SearchTerm", $"%{searchTerm}%"); }
 
                 using var reader = cmd.ExecuteReader();
+                // Itera pelos resultados e cria uma lista de objetos Peca.
                 while (reader.Read())
                 {
                     pecas.Add(new Peca
@@ -45,7 +46,7 @@ namespace OfiPecas
                         Preco = reader.GetDecimal("preco"),
                         Estoque = reader.GetInt32("estoque"),
                         CategoriaId = reader.GetInt32("id_categoria"),
-                        NomeCategoria = reader["NomeCategoria"] as string, // Preenche a nova propriedade
+                        NomeCategoria = reader["NomeCategoria"] as string,
                         ImagemBytes = (byte[])reader["imagem"]
                     });
                 }
@@ -54,10 +55,11 @@ namespace OfiPecas
             return pecas;
         }
 
-        // Devolve peças de uma categoria específica (aqui não precisamos do nome, a loja já o sabe)
+        // Devolve as peças de uma categoria específica.
         public static List<Peca> GetPecasPorCategoria(int idCategoria)
         {
             var pecas = new List<Peca>();
+            // Este método não precisa do JOIN porque a categoria já é conhecida.
             string sql = "SELECT id_peca, nome, preco, estoque, id_categoria, imagem FROM dbo.PECA WHERE id_categoria = @CategoriaId";
             try
             {
@@ -82,7 +84,7 @@ namespace OfiPecas
             return pecas;
         }
 
-        // Devolve todas as categorias (este método está correto)
+        // Devolve a lista de todas as categorias.
         public static List<CategoriaInfo> GetCategorias()
         {
             var categorias = new List<CategoriaInfo>();

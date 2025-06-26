@@ -3,37 +3,37 @@ using System.IO;
 
 namespace OfiPecas
 {
-    // Esta classe ensina a biblioteca PDFsharp a encontrar as fontes do Windows.
+    // Implementação personalizada de IFontResolver para ajudar a biblioteca PDFsharp
+    // a localizar ficheiros de fonte no sistema operativo.
     public class FontResolver : IFontResolver
     {
+        // Devolve informação sobre o tipo de letra.
         public FontResolverInfo ResolveTypeface(string familyName, bool isBold, bool isItalic)
         {
-            // O estilo é determinado pela biblioteca com base nos dados da fonte.
-            // Apenas precisamos de devolver o nome da família.
+            // Retorna o nome da família da fonte para a biblioteca processar.
             return new FontResolverInfo(familyName);
         }
 
-        // Devolve os bytes do ficheiro da fonte.
+        // Devolve os bytes do ficheiro de fonte correspondente.
         public byte[] GetFont(string faceName)
         {
-            // Tenta carregar a fonte a partir da pasta de fontes do Windows.
-            // O faceName será algo como "Arial".
+            // Constrói o caminho para o ficheiro .ttf na pasta de fontes do Windows.
             var fontPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts), faceName + ".ttf");
 
-            // Se o ficheiro da fonte existir, lê e devolve os seus bytes.
+            // Se o ficheiro existir, lê e retorna o seu conteúdo em bytes.
             if (File.Exists(fontPath))
             {
                 return File.ReadAllBytes(fontPath);
             }
 
-            // Se "Arial.ttf" não for encontrado (raro), tenta com "Verdana.ttf" como fallback.
+            // Fallback para uma fonte comum caso a primeira não seja encontrada.
             fontPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Fonts), "verdana.ttf");
             if (File.Exists(fontPath))
             {
                 return File.ReadAllBytes(fontPath);
             }
 
-            // Se nenhuma fonte for encontrada, devolve nulo (a biblioteca tratará do erro).
+            // Retorna nulo se nenhuma fonte for encontrada.
             return null;
         }
     }

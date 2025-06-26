@@ -54,9 +54,9 @@
             label_RecuperarPass.AutoSize = true;
             label_RecuperarPass.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_RecuperarPass.ForeColor = Color.White;
-            label_RecuperarPass.Location = new Point(502, 417);
+            label_RecuperarPass.Location = new Point(439, 313);
             label_RecuperarPass.Name = "label_RecuperarPass";
-            label_RecuperarPass.Size = new Size(170, 19);
+            label_RecuperarPass.Size = new Size(143, 13);
             label_RecuperarPass.TabIndex = 4;
             label_RecuperarPass.Text = "Não sabe a sua password?";
             label_RecuperarPass.Click += label_RecuperarPass_Click;
@@ -72,11 +72,10 @@
             Button_Login.FillColor = Color.DodgerBlue;
             Button_Login.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Button_Login.ForeColor = Color.White;
-            Button_Login.Location = new Point(502, 480);
-            Button_Login.Margin = new Padding(3, 4, 3, 4);
+            Button_Login.Location = new Point(439, 360);
             Button_Login.Name = "Button_Login";
             Button_Login.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Button_Login.Size = new Size(240, 40);
+            Button_Login.Size = new Size(210, 30);
             Button_Login.TabIndex = 5;
             Button_Login.Text = "Login";
             Button_Login.Click += Button_Login_Click;
@@ -86,9 +85,9 @@
             label_CriarConta.AutoSize = true;
             label_CriarConta.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_CriarConta.ForeColor = Color.DodgerBlue;
-            label_CriarConta.Location = new Point(504, 524);
+            label_CriarConta.Location = new Point(441, 393);
             label_CriarConta.Name = "label_CriarConta";
-            label_CriarConta.Size = new Size(168, 19);
+            label_CriarConta.Size = new Size(138, 13);
             label_CriarConta.TabIndex = 8;
             label_CriarConta.Text = "Não tem conta? Crie uma.";
             label_CriarConta.Click += label_CriarConta_Click;
@@ -98,10 +97,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DodgerBlue;
-            label3.Location = new Point(512, 303);
+            label3.Location = new Point(448, 227);
             label3.Name = "label3";
             label3.Padding = new Padding(1, 0, 1, 0);
-            label3.Size = new Size(133, 23);
+            label3.Size = new Size(102, 17);
             label3.TabIndex = 20;
             label3.Text = "Utilizador/Email";
             // 
@@ -121,13 +120,13 @@
             TextBox_User_Email.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_User_Email.Font = new Font("Segoe UI", 9F);
             TextBox_User_Email.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_User_Email.Location = new Point(501, 315);
-            TextBox_User_Email.Margin = new Padding(3, 5, 3, 5);
+            TextBox_User_Email.Location = new Point(438, 236);
+            TextBox_User_Email.Margin = new Padding(3, 4, 3, 4);
             TextBox_User_Email.Name = "TextBox_User_Email";
             TextBox_User_Email.PlaceholderText = "";
             TextBox_User_Email.SelectedText = "";
             TextBox_User_Email.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TextBox_User_Email.Size = new Size(240, 40);
+            TextBox_User_Email.Size = new Size(210, 30);
             TextBox_User_Email.TabIndex = 19;
             // 
             // label4
@@ -135,10 +134,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DodgerBlue;
-            label4.Location = new Point(512, 361);
+            label4.Location = new Point(448, 271);
             label4.Name = "label4";
             label4.Padding = new Padding(1, 0, 1, 0);
-            label4.Size = new Size(82, 23);
+            label4.Size = new Size(66, 17);
             label4.TabIndex = 18;
             label4.Text = "Password";
             // 
@@ -158,13 +157,13 @@
             TextBox_Pass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox_Pass.Font = new Font("Segoe UI", 9F);
             TextBox_Pass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox_Pass.Location = new Point(501, 373);
-            TextBox_Pass.Margin = new Padding(3, 5, 3, 5);
+            TextBox_Pass.Location = new Point(438, 280);
+            TextBox_Pass.Margin = new Padding(3, 4, 3, 4);
             TextBox_Pass.Name = "TextBox_Pass";
             TextBox_Pass.PlaceholderText = "";
             TextBox_Pass.SelectedText = "";
             TextBox_Pass.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TextBox_Pass.Size = new Size(240, 40);
+            TextBox_Pass.Size = new Size(210, 30);
             TextBox_Pass.TabIndex = 17;
             TextBox_Pass.UseSystemPasswordChar = true;
             // 
@@ -173,10 +172,9 @@
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.ForeColor = Color.DodgerBlue;
-            guna2HtmlLabel3.Location = new Point(487, 181);
-            guna2HtmlLabel3.Margin = new Padding(3, 4, 3, 4);
+            guna2HtmlLabel3.Location = new Point(410, 114);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(172, 43);
+            guna2HtmlLabel3.Size = new Size(140, 34);
             guna2HtmlLabel3.TabIndex = 21;
             guna2HtmlLabel3.Text = "Bem Vindo a";
             // 
@@ -185,21 +183,20 @@
             guna2PictureBox1.CustomizableEdges = customizableEdges7;
             guna2PictureBox1.Image = Properties.Resources.logo;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(626, 128);
-            guna2PictureBox1.Margin = new Padding(3, 4, 3, 4);
+            guna2PictureBox1.Location = new Point(556, 67);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2PictureBox1.Size = new Size(174, 152);
+            guna2PictureBox1.Size = new Size(152, 114);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox1.TabIndex = 22;
             guna2PictureBox1.TabStop = false;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1239, 748);
+            ClientSize = new Size(1086, 567);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2PictureBox1);
             Controls.Add(label3);
@@ -210,9 +207,8 @@
             Controls.Add(Button_Login);
             Controls.Add(label_RecuperarPass);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(1257, 795);
-            MinimumSize = new Size(1257, 795);
+            MaximumSize = new Size(1102, 606);
+            MinimumSize = new Size(1102, 606);
             Name = "Login";
             Text = "OfiPeças";
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();

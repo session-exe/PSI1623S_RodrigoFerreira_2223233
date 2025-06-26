@@ -259,6 +259,7 @@
             PictureBox_PecaImagem.Name = "PictureBox_PecaImagem";
             PictureBox_PecaImagem.ShadowDecoration.CustomizableEdges = customizableEdges8;
             PictureBox_PecaImagem.Size = new Size(245, 122);
+            PictureBox_PecaImagem.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBox_PecaImagem.TabIndex = 38;
             PictureBox_PecaImagem.TabStop = false;
             // 

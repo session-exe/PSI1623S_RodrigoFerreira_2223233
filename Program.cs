@@ -78,25 +78,3 @@ namespace OfiPecas
     }
 }
 
-//namespace OfiPecas
-//{
-//    internal static class Program
-//    {
-
-//        [STAThread]
-//        static void Main()
-//        {
-//            Env.Load();
-
-//            // Verifica conexão antes de iniciar
-//            if (!DatabaseConnection.TestarConexao())
-//            {
-//                MessageBox.Show("Erro ao conectar ao banco de dados!");
-//                return;
-//            }
-
-//            ApplicationConfiguration.Initialize();
-//            Application.Run(new Login());
-//        }
-//    }
-//}
