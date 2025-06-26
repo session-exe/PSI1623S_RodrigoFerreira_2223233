@@ -98,6 +98,7 @@ namespace OfiPecas
         private void Button_Novo_Click(object sender, EventArgs e)
         {
             LimparFormularioPeca();
+            LimparFormularioPeca();
         }
 
         // Guarda uma peça nova ou as alterações de uma existente.
