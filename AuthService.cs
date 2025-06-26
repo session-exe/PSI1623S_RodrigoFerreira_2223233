@@ -7,11 +7,10 @@ using System.Net.Mail; // Necessário para a validação de email
 namespace OfiPecas
 {
     // Esta classe estática centraliza toda a lógica de autenticação.
-    // Lida com o registo de novos utilizadores, login e recuperação de password.
     public static class AuthService
     {
         // Cria um novo utilizador com permissões de administrador.
-        public static (bool success, string message) CreateAdmin(string username, string email, string plainPassword, string recoveryKey)
+        internal static (bool success, string message) CreateAdmin(string username, string email, string plainPassword, string recoveryKey)
         {
             // Validações iniciais para garantir que os dados essenciais não estão vazios.
             if (string.IsNullOrWhiteSpace(username)) return (false, "O campo 'Utilizador' é obrigatório.");
@@ -50,7 +49,7 @@ namespace OfiPecas
             }
         }
 
-        // Cria um novo utilizador normal (cliente).
+        // Cria um novo utilizador (cliente).
         public static (bool success, string message) CreateUser(string username, string email, string plainPassword, string recoveryKey, string endereco, string nomeEmpresa, string telefone = null)
         {
             // Validações semelhantes ao CreateAdmin, mas com os campos extra do cliente.
