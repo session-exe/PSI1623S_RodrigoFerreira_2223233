@@ -189,8 +189,7 @@ namespace OfiPecas
             return digitsOnly.Length >= 9 && digitsOnly.Length <= 15;
         }
 
-        // Gera um hash seguro de uma password usando um "salt" aleatório.
-        // O "salt" garante que duas passwords iguais resultam em hashes diferentes.
+        // Gera um hash seguro de uma password 
         internal static string HashPassword(string plain)
         {
             byte[] salt = new byte[16];

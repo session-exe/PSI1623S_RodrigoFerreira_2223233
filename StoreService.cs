@@ -16,7 +16,7 @@ namespace OfiPecas
         public static List<Peca> PesquisarPecas(string searchTerm)
         {
             var pecas = new List<Peca>();
-            // Query SQL com JOIN para obter também o nome da categoria.
+
             string sql = @"
                 SELECT 
                     p.id_peca, p.nome, p.preco, p.estoque, p.id_categoria, p.imagem, 
@@ -59,7 +59,7 @@ namespace OfiPecas
         public static List<Peca> GetPecasPorCategoria(int idCategoria)
         {
             var pecas = new List<Peca>();
-            // Este método não precisa do JOIN porque a categoria já é conhecida.
+            
             string sql = "SELECT id_peca, nome, preco, estoque, id_categoria, imagem FROM dbo.PECA WHERE id_categoria = @CategoriaId";
             try
             {

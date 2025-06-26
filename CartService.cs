@@ -13,9 +13,9 @@ namespace OfiPecas
         // Adiciona um produto ao carrinho de um utilizador.
         public static (bool success, string message) AdicionarAoCarrinho(int userId, int pecaId)
         {
-            // 'using' garante que a conexão e a transação são fechadas corretamente, mesmo se ocorrer um erro.
+            
             using var conn = DatabaseConnection.GetConnection();
-            // Uma transação garante que todas as operações seguintes ou são bem-sucedidas em conjunto, ou nenhuma é.
+
             using var transaction = conn.BeginTransaction();
             try
             {
@@ -78,12 +78,12 @@ namespace OfiPecas
                     }
                 }
 
-                transaction.Commit(); // Confirma todas as alterações na base de dados.
+                transaction.Commit(); 
                 return (true, "Produto adicionado ao carrinho com sucesso!");
             }
             catch (Exception ex)
             {
-                transaction.Rollback(); // Se ocorrer um erro, desfaz todas as alterações.
+                transaction.Rollback(); 
                 return (false, $"Erro ao adicionar ao carrinho: {ex.Message}");
             }
         }
@@ -92,7 +92,7 @@ namespace OfiPecas
         public static List<ItemCarrinhoInfo> GetItensDoCarrinho(int userId)
         {
             var itens = new List<ItemCarrinhoInfo>();
-            // Query SQL que junta as tabelas de itens, carrinho e peças para obter toda a informação.
+            
             string sql = @"
                 SELECT ic.id_item, p.id_peca, p.nome, p.preco, ic.quantidade, p.imagem, p.estoque
                 FROM dbo.ITEM_CARRINHO ic
